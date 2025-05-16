@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carol Chan - Project: CLASS Half-Wave Plate</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Link to CSS (adjust path) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+</head>
+<body>
+
+     <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Carol Yan-Yan Chan</h1>
+                    <p class="title">Astrophysics PhD Candidate | Aspiring Mechanical Design Engineer</p>
+                    <div class="header-contact-buttons">
+                        <a href="mailto:ychan19@jhu.edu" class="button">Email</a>
+                        <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li> <!-- Adjust path -->
+                    <li><a href="../projects.html" class="active">Projects</a></li> <!-- Adjust path & active link -->
+                    <li><a href="../resume.html">Resume</a></li> <!-- Adjust path -->
+                    <li><a href="../files/carol_chan_resume.pdf" target="_blank">Resume (PDF)</a></li> <!-- Adjust path -->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-detail-content">
+            <div class="container">
+                <h2 class="section-title">CLASS 60-cm Half-Wave Plate</h2>
+
+                <p><strong>Context:</strong> This project involved the design and characterization of a critical optical component for the Cosmology Large Angular Scale Surveyor (CLASS) telescope operating at 90 GHz. The half-wave plate is used to modulate the polarization of incoming light, which is essential for isolating the faint cosmic microwave background signal from galactic foregrounds.</p>
+
+                <p><strong>My Role & Contributions:</strong> I contributed significantly to the mechanical design, modeling, and laboratory characterization phases of this project.</p>
+
+                <p><strong>Key Responsibilities & Tasks:</strong></p>
+                <ul>
+                    <li>Designed and modeled the reflective half-wave plate structure and mounting using SolidWorks.</li>
+                    <li>Performed ray-tracing simulations to optimize the geometry for polarization modulation efficiency.</li>
+                    <li>Collaborated closely with fabrication specialists during the manufacturing process.</li>
+                    <li>Assisted with laboratory characterization measurements to verify performance metrics, comparing experimental results against simulations.</li>
+                </ul>
+
+                <div class="project-details-visuals">
+                    <h4>Visuals</h4>
+                    <img src="../images/halfwaveplate_cad.jpg" alt="SolidWorks CAD model of the 60cm half-wave plate"> <!-- Adjust path -->
+                    <p class="image-caption">SolidWorks CAD model showing the half-wave plate geometry.</p>
+
+                     <img src="../images/halfwaveplate_photo.jpg" alt="Photo of the fabricated half-wave plate"> <!-- Adjust path -->
+                    <p class="image-caption">Photo of the finished half-wave plate during laboratory testing.</p>
+
+                     <!-- Add more images or videos specific to this project -->
+
+                </div>
+
+                 <p><strong>Outcome:</strong> The developed half-wave plate design met the required optical and mechanical tolerances and was successfully integrated into the CLASS instrument, contributing to its observational capabilities.</p>
+                 <p><strong>Related Publication:</strong> This work is detailed in our recent publication (see Resume page for citation).</p>
+
+
+                <div class="back-button-container">
+                    <a href="../projects.html" class="button">← Back to Projects</a> <!-- Adjust path -->
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container" id="contact">
+            <p>© <span id="current-year"></span> Carol Yan-Yan Chan. All rights reserved.</p>
+            <div class="footer-contact-buttons">
+                 <a href="mailto:ychan19@jhu.edu" class="button">Email</a>
+                 <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

@@ -3,17 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carol Chan - Astrophysics PhD Candidate | Mechanical Design</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Professional Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght=400;600;700&display=swap">
-
-    <!-- Optional: Favicon -->
-    <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
-
-    <!-- Optional: Add a library for icons (like Font Awesome) if you want icons on buttons -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <title>Carol Chan - Mechanical Design Engineer Candidate</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 </head>
 <body>
 
@@ -24,42 +17,41 @@
                     <h1>Carol Yan-Yan Chan</h1>
                     <p class="title">Astrophysics PhD Candidate | Aspiring Mechanical Design Engineer</p>
                     <div class="header-contact-buttons">
-                        <a href="mailto:ychan19@jhu.edu" class="contact-button email-button"><!-- Optional: Add mail icon here if using Font Awesome --> Email</a>
-                        <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="contact-button linkedin-button"><!-- Optional: Add LinkedIn icon --> LinkedIn</a>
-                        <!-- Replace with actual portfolio link if different from this site -->
-                        <!-- <a href="[Link to Dedicated Portfolio Page]" target="_blank" rel="noopener noreferrer" class="contact-button portfolio-button">Portfolio</a> -->
-                         <!-- If using icons: <i class="fas fa-envelope"></i> or <i class="fab fa-linkedin"></i> -->
+                        <a href="mailto:ychan19@jhu.edu" class="button">Email</a>
+                        <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
                     </div>
                 </div>
-                <!-- Optional: Add a professional headshot -->
-                <!-- <div class="header-photo">
-                    <img src="images/your-photo.jpg" alt="Carol Yan-Yan Chan Professional Photo">
-                </div> -->
             </div>
-
             <nav class="site-nav">
                 <ul>
-                    <li><a href="#summary">Summary</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                     <li><a href="#projects">Projects</a></li> <!-- New Projects link -->
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#awards">Awards</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="files/carol_chan_resume.pdf" target="_blank">Resume</a></li> <!-- Resume link -->
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li> <!-- Active link -->
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                     <li><a href="files/carol_chan_resume.pdf" target="_blank">Resume (PDF)</a></li>
+                    <li><a href="#contact">Contact</a></li> <!-- Link to footer contact -->
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="summary" class="section container">
-            <h2 class="section-title">Summary</h2>
-            <p>Astrophysics PhD Candidate with a strong foundation in physics and a proven ability to apply advanced analytical, modeling, and simulation techniques to complex mechanical design and engineering problems. Over 3 years of hands-on experience in CAD, Finite Element Analysis, thermal/structural simulation and instrumentation development. Eager to leverage a background in rigorous problem-solving and hardware development in a Mechanical Design Engineering role.</p>
+        <section class="intro-section">
+            <div class="container">
+                <h2>Hi! I am Carol!</h2>
+                <p>A driven Astrophysics PhD Candidate with a strong foundation in physics and mechanical design,
+                   transitioning my rigorous problem-solving and hardware development skills to mechanical engineering.</p>
+                <p>Discover my work and background below.</p>
+                <a href="projects.html" class="button">View Projects</a>
+                <a href="resume.html" class="button">View Full Resume</a>
+            </div>
         </section>
 
-        <section id="skills" class="section container">
+        <section id="summary" class="section container">
+            <h2 class="section-title">Summary</h2>
+            <p>Astrophysics PhD Candidate with a proven ability to apply advanced analytical, modeling, and simulation techniques to complex mechanical design and engineering problems. Over 3 years of hands-on experience in CAD, Finite Element Analysis, thermal/structural simulation and instrumentation development. Eager to leverage a background in rigorous problem-solving and hardware development in a Mechanical Design Engineering role.</p>
+        </section>
+
+         <section id="skills" class="section container">
             <h2 class="section-title">Skills</h2>
             <div class="skills-list">
                 <div class="skill-category">
@@ -85,250 +77,6 @@
             </div>
         </section>
 
-         <!-- NEW PROJECTS SECTION -->
-        <section id="projects" class="section container">
-            <h2 class="section-title">Selected Projects</h2>
-            <div class="projects-gallery">
-
-                <!-- Project 1: CLASS Half-Wave Plate -->
-                <div class="project-item">
-                    <input type="checkbox" id="project1-toggle" class="project-toggle" hidden>
-                    <label for="project1-toggle" class="project-card">
-                        <img src="images/project1_thumb_hwp.jpg" alt="Thumbnail: CLASS 60cm Half-Wave Plate"> <!-- Use specific thumbnail -->
-                        <h3>CLASS Half-Wave Plate</h3>
-                    </label>
-                    <div class="project-details">
-                        <p><strong>Project:</strong> Design and characterization of a 60-cm reflective half-wave plate for the CLASS 90 GHz band telescope.</p>
-                        <p><strong>Role:</strong> Contributed to the design, modeling, and characterization.</p>
-                        <p><strong>Details:</strong> Used SolidWorks for 3D modeling. Performed ray-tracing simulations and collaborated on the fabrication process. Characterized performance in the lab.</p>
-                        <div class="project-details-visuals">
-                            <img src="images/halfwaveplate_cad.jpg" alt="CLASS Half-Wave Plate CAD model">
-                            <p class="image-caption">SolidWorks CAD model of the half-wave plate.</p>
-                            <img src="images/halfwaveplate_photo.jpg" alt="Fabricated CLASS Half-Wave Plate">
-                            <p class="image-caption">Photo of the fabricated half-wave plate before installation.</p>
-                             <!-- Link to publication if relevant -->
-                             <p>See publication: <a href="#publications">Shi, R., et al. (2024)</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Quadruped Robot -->
-                <div class="project-item">
-                    <input type="checkbox" id="project2-toggle" class="project-toggle" hidden>
-                    <label for="project2-toggle" class="project-card">
-                        <img src="images/project2_thumb_robot.jpg" alt="Thumbnail: Quadruped Robot"> <!-- Use specific thumbnail -->
-                        <h3>Quadruped Robot Design (Robocon)</h3>
-                    </label>
-                    <div class="project-details">
-                        <p><strong>Project:</strong> Design and assembly of a quadruped robot for the Robocon competition.</p>
-                        <p><strong>Role:</strong> Mechanical Engineer, led design improvements.</p>
-                        <p><strong>Details:</strong> Designed and assembled custom frame, legs, joints, and actuators. Collaborated across teams (electronics, software). Implemented iterative design cycles that significantly improved performance.</p>
-                         <div class="project-details-visuals">
-                            <img src="images/robot_photo.jpg" alt="Photo of the quadruped robot">
-                            <p class="image-caption">The finished quadruped robot.</p>
-                            <!-- If you have a video uploaded elsewhere -->
-                             <h4>Video Showcase</h4>
-                             <div class="video-container"> <!-- Add a div for responsive video -->
-                                <iframe
-                                    src="https://www.youtube.com/embed/YOUR_ROBOT_VIDEO_ID" <!-- REPLACE with actual video ID -->
-                                    title="Quadruped Robot in Action"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
-                             </div>
-                             <p class="video-caption">Video demonstrating the robot's mobility.</p>
-                        </div>
-                        <p>Awarded Hong Kong Robocon Best Design Award and Second-runner up (2019).</p>
-                    </div>
-                </div>
-
-                 <!-- Project 3: CLASS Instrument Development -->
-                <div class="project-item">
-                    <input type="checkbox" id="project3-toggle" class="project-toggle" hidden>
-                    <label for="project3-toggle" class="project-card">
-                        <img src="images/project3_thumb_class.jpg" alt="Thumbnail: CLASS Instrument"> <!-- Use specific thumbnail -->
-                        <h3>CLASS Scientific Instrument Development</h3>
-                    </label>
-                    <div class="project-details">
-                         <p><strong>Project:</strong> Design, simulation, and development of components for the CLASS telescope instruments.</p>
-                         <p><strong>Role:</strong> PhD Researcher (Aug 2022 - Present).</p>
-                         <p><strong>Details:</strong> Includes work on various optical components and systems. Focus on structural integrity (SolidWorks Simulation) and thermal performance in cryogenic environments (COMSOL). Also involved instrument control and data acquisition.</p>
-                         <div class="project-details-visuals">
-                            <img src="images/class_system.jpg" alt="CLASS instrument photo">
-                            <p class="image-caption">Component of the CLASS instrument system.</p>
-                            <img src="images/class_simulation.jpg" alt="COMSOL thermal simulation">
-                            <p class="image-caption">Result from COMSOL thermal simulation for a cryogenic component.</p>
-                        </div>
-                         <!-- Could mention other relevant CLASS work here -->
-                    </div>
-                </div>
-
-                <!-- Project 4: Thermoacoustic Instability Analysis -->
-                <div class="project-item">
-                    <input type="checkbox" id="project4-toggle" class="project-toggle" hidden>
-                    <label for="project4-toggle" class="project-card">
-                        <img src="images/project4_thumb_thermo.jpg" alt="Thumbnail: Thermoacoustic Analysis"> <!-- Use specific thumbnail -->
-                        <h3>Thermoacoustic Instability Analysis</h3>
-                    </label>
-                    <div class="project-details">
-                        <p><strong>Project:</strong> Analysis of thermoacoustic instability in a solid rocket motor.</p>
-                        <p><strong>Role:</strong> Undergraduate Researcher (Sep 2020 - Aug 2021) at HKUST MAE.</p>
-                        <p><strong>Details:</strong> Applied advanced time-series techniques (MDFTA, 0-1 chaos test, complex networks) in MATLAB to analyze experimental data and forecast instability.</p>
-                        <div class="project-details-visuals">
-                           <!-- Add relevant visuals if you have them, e.g., plots, diagrams -->
-                            <img src="images/thermo_plot.jpg" alt="Plot of analysis results">
-                            <p class="image-caption">Example plot showing analysis of pressure data.</p>
-                        </div>
-                         <p>Demonstrated strong analytical and data processing skills in a complex engineering problem.</p>
-                    </div>
-                </div>
-
-                <!-- Add more projects as needed following the same structure -->
-                 <!-- Remember to use unique IDs for each checkbox and label (e.g., project5-toggle) -->
-
-
-            </div>
-        </section>
-
-
-        <section id="experience" class="section container">
-            <h2 class="section-title">Experience</h2>
-
-            <div class="job-entry">
-                <div class="job-header">
-                    <h3>PhD Researcher</h3>
-                    <span class="job-date">Aug 2022 – Present</span>
-                </div>
-                <p class="job-org">The Cosmology Large Angular Scale Surveyor (CLASS) Collaboration</p>
-                <p class="job-location">Baltimore, MD</p>
-                <ul class="job-description">
-                    <li>Designed and modeled optical components and scientific instruments using SolidWorks, including complex assemblies and detailed part drawings; performed static and frequency analysis to ensure structural integrity under operational loads</li>
-                    <li>Developed and validated Finite Element Simulations (FEA) using COMSOL Multiphysics for radiation and heat transfer in cryogenic systems, predicting thermal performance and optimizing insulation</li>
-                    <li>Automated scientific data acquisition and instrument control systems using LabView and Arduino</li>
-                    <li>Coordinated technical efforts (7 students/scientists) for the deployment, assembly, and commissioning of a large scientific instrument in a remote environment (Atacama Desert in Chile)</li>
-                    <li>Applied analytical techniques to evaluate instrument performance and identify systematic effects from observational data</li>
-                </ul>
-            </div>
-
-            <div class="job-entry">
-                <div class="job-header">
-                    <h3>Undergraduate Researcher</h3>
-                    <span class="job-date">Sep 2020 – Aug 2021</span>
-                </div>
-                <p class="job-org">Department of Mechanical and Aerospace Engineering, HKUST</p>
-                <p class="job-location">Hong Kong</p>
-                 <ul class="job-description">
-                    <li>Applied time-series analysis techniques (Multifractal Detrended Fluctuation Analysis, 0-1 chaos test, complex networks) in MATLAB to analyze data and forecast impending thermoacoustic instability in a solid rocket motor</li>
-                </ul>
-            </div>
-
-             <div class="job-entry">
-                <div class="job-header">
-                    <h3>Undergraduate Researcher</h3>
-                     <span class="job-date">Nov 2019 – May 2022</span>
-                </div>
-                <p class="job-org">Department of Physics, HKUST</p>
-                <p class="job-location">Hong Kong</p>
-                 <ul class="job-description">
-                    <li>Designed a 3D print enclosure for an astronomical detector</li>
-                    <li>Automated detector temperature measurement and data acquisition using LabView and Arduino</li>
-                </ul>
-            </div>
-
-            <div class="job-entry">
-                <div class="job-header">
-                    <h3>Mechanical Engineer</h3>
-                     <span class="job-date">Sep 2018 – Aug 2019</span>
-                </div>
-                <p class="job-org">Robotics Team, HKUST</p>
-                <p class="job-location">Hong Kong</p>
-                 <ul class="job-description">
-                    <li>Designed and assembled custom frame, legs, joints and actuators for a quadruped robot for Robocon competition</li>
-                    <li>Collaborated closely with a team of 10+ students across electronics and software divisions to integrate mechanical, electrical, and control systems</li>
-                    <li>Led iterative design improvements over several generations, significantly enhancing robot performance and speed for competition requirements</li>
-                    <li>Awarded Hong Kong Robocon Best Design Award and Second-runner up (2019) for this work</li>
-                </ul>
-            </div>
-
-            <div class="job-entry">
-                <div class="job-header">
-                    <h3>Summer Engineering Intern</h3>
-                    <span class="job-date">Jun 2020 – Aug 2020</span>
-                </div>
-                <p class="job-org">GP Electronics</p>
-                <p class="job-location">Hong Kong</p>
-                <ul class="job-description">
-                    <li>Performed mechanical design and 3D modeling of optical components for acoustic speakers using SolidWorks and ray-tracing software</li>
-                    <li>Evaluated design performance through simulation results and 3D rendering, iterating on designs to improve light uniformity and aesthetic integration</li>
-                </ul>
-            </div>
-
-        </section>
-
-        <section id="education" class="section container">
-            <h2 class="section-title">Education</h2>
-
-            <div class="education-entry">
-                 <div class="education-header">
-                    <h3>Johns Hopkins University</h3>
-                     <span class="education-date">2027 (expected)</span>
-                </div>
-                <p class="education-location">Baltimore, MD</p>
-                <p class="education-degree">Candidate for PhD in Astronomy and Astrophysics</p>
-                <p class="education-dissertation">Dissertation: Instrumentation and data analysis for the Cosmology Large Angular Scale Surveyor (CLASS)</p>
-                <ul class="education-details">
-                     <li>Designed and built novel scientific instrument to enhance the efficiency of the telescopes</li>
-                     <li>Developed advanced analytical modeling, simulation, and experimental validation skills applicable to complex engineering systems</li>
-                </ul>
-            </div>
-
-             <div class="education-entry">
-                 <div class="education-header">
-                    <h3>Hong Kong University of Science and Technology</h3>
-                    <span class="education-date">2022</span>
-                </div>
-                 <p class="education-location">Hong Kong S.A.R.</p>
-                <p class="education-degree">BSc. in Physics, Minor in robotics, astrophysics and cosmology</p>
-                <p class="education-courses">Relevant courses: Introduction to Robotics; Aerodynamics; System Modelling, Analysis and Control; Gas Turbines and Jet Propulsion; Introduction to Embedded System; Engineering Optics</p>
-            </div>
-        </section>
-
-        <section id="teaching" class="section container">
-             <h2 class="section-title">Teaching</h2>
-             <div class="teaching-entry">
-                 <div class="teaching-header">
-                    <h3>Teaching Assistant</h3>
-                     <span class="teaching-date">Aug 2022 – Present</span>
-                </div>
-                 <p class="teaching-org">Department of Physics and Astronomy, JHU</p>
-                <p class="teaching-location">Baltimore, MD</p>
-                <ul class="teaching-details">
-                    <li>Communicated complex physics and mathematical concepts clearly to students at graduate and advanced undergraduate levels</li>
-                </ul>
-            </div>
-        </section>
-
-
-         <section id="awards" class="section container">
-            <h2 class="section-title">Fellowships & Awards</h2>
-            <ul class="awards-list">
-                <li>Joseph Needham Merit Scholarship (2022-2025)</li>
-                <li>HSBC Scholarship (2022)</li>
-                <li>Innovation and Technology Scholarship (2020)</li>
-                <li>Hong Kong Robocon Best Design Award and Second-runner up (2019)</li>
-                <li>Physics Entry Scholarship (2019)</li>
-                <li>The Women's Foundation Sheen Hok WISE Scholarship (2018 - 2021)</li>
-            </ul>
-        </section>
-
-         <section id="publications" class="section container">
-            <h2 class="section-title">Selected Publications</h2>
-            <ul class="publications-list">
-                <li><span class="publication-citation">Chan, C. Y. Y., Ryan C., Li Y., et al. (2025). Impact of Azimuth Synchronous Signal on CLASS (manuscript in preparation)</span></li>
-                <li id="pub-hwp"><span class="publication-citation">Shi, R., Brewer, M. K., Chan, C. Y. Y., Chuss, D. T., Couto, J. D., Eimer, J. R., et al. (2024). Design and characterization of a 60-cm reflective half-wave plate for the CLASS 90 GHz band telescope. In Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XII (Vol. 13102, pp. 688-710). SPIE.</span></li>
-            </ul>
-        </section>
 
     </main>
 
@@ -336,28 +84,14 @@
         <div class="container" id="contact">
             <p>© <span id="current-year"></span> Carol Yan-Yan Chan. All rights reserved.</p>
             <div class="footer-contact-buttons">
-                 <a href="mailto:ychan19@jhu.edu" class="contact-button email-button">Email</a>
-                 <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="contact-button linkedin-button">LinkedIn</a>
+                 <a href="mailto:ychan19@jhu.edu" class="button">Email</a>
+                 <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Optional: Script to automatically update the copyright year and add smooth scrolling polyfill if needed (though CSS scroll-behavior is preferred)
         document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Simple script to close other project details when one is opened
-        document.querySelectorAll('.project-toggle').forEach(toggle => {
-            toggle.addEventListener('change', function() {
-                if (this.checked) {
-                    document.querySelectorAll('.project-toggle').forEach(otherToggle => {
-                        if (otherToggle !== this) {
-                            otherToggle.checked = false;
-                        }
-                    });
-                }
-            });
-        });
     </script>
 
 </body>
