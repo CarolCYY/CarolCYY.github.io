@@ -1,115 +1,145 @@
 /* Basic Reset */
+html {
+    scroll-behavior: smooth; /* Add smooth scrolling */
+}
+
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Or your chosen font */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    padding-top: 80px; /* Add padding to top for fixed header (if you make it fixed) */
 }
 
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif; /* Or your chosen heading font */
-    color: #2c3e50; /* Dark blue/grey */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
 }
 
 .container {
-    max-width: 1000px; /* Adjust as needed */
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px; /* Add padding on the sides */
+    padding: 0 20px;
 }
 
 /* Header Styling */
 .site-header {
-    background-color: #ecf0f1; /* Light grey/blue */
-    padding: 20px 0;
-    border-bottom: 3px solid #3498db; /* Blue accent */
-    text-align: center; /* Center header content initially */
+    background-color: #ecf0f1;
+    padding: 15px 0; /* Reduced padding */
+    border-bottom: 3px solid #3498db;
+    text-align: center;
+    position: fixed; /* Make header fixed */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-content {
-    /* Use flexbox for potential photo/text layout on larger screens */
     display: flex;
-    flex-direction: column; /* Stack vertically on small screens */
+    flex-direction: column;
     align-items: center;
-    gap: 20px; /* Space between text and photo */
+    gap: 15px; /* Reduced gap */
+    padding-bottom: 15px; /* Space before nav */
 }
 
 .header-text h1 {
-    margin: 0 0 5px 0;
-    font-size: 2.5em;
+    margin: 0;
+    font-size: 2em; /* Reduced font size */
     color: #2c3e50;
 }
 
 .header-text .title {
-    margin: 0 0 15px 0;
-    font-size: 1.2em;
+    margin: 0; /* Removed bottom margin */
+    font-size: 1.1em; /* Reduced font size */
     color: #555;
 }
 
-.contact-info {
-    margin: 0;
-    font-size: 0.9em;
-    color: #666;
+/* Contact Buttons Styling */
+.header-contact-buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
 }
 
-.contact-info a {
-    color: #3498db;
+.contact-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: #fff;
     text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+.contact-button:hover {
+    background-color: #2980b9;
 }
+
+.email-button {
+    background-color: #e74c3c; /* Example email color */
+}
+.email-button:hover {
+    background-color: #c0392b;
+}
+
+.linkedin-button {
+    background-color: #0077B5; /* Example LinkedIn color */
+}
+.linkedin-button:hover {
+     background-color: #005582;
+}
+
 
 /* Optional Photo Styling */
-/*
-.header-photo img {
-    border-radius: 50%; /* Circle photo *\/
-    width: 120px; /* Adjust size *\/
-    height: 120px;
-    object-fit: cover; /* Ensure photo covers the area *\/
-    border: 3px solid #fff; /* White border around photo *\/
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-*/
+/* (Keep as before if using) */
+
 
 /* Navigation Styling */
 .site-nav {
-    margin-top: 20px;
+    margin-top: 0; /* Adjusted margin */
 }
 
 .site-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Arrange links horizontally */
-    justify-content: center; /* Center the links */
-    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
-    gap: 15px; /* Space between links */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 15px; /* Vertical and horizontal gap */
+    font-size: 0.95em;
 }
 
 .site-nav a {
     text-decoration: none;
     color: #2c3e50;
     font-weight: 500;
-    padding: 5px 10px;
-    transition: color 0.3s ease;
+    padding: 5px 0; /* Padding only top/bottom */
+    border-bottom: 2px solid transparent; /* Add transparent border for hover effect */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 .site-nav a:hover {
     color: #3498db;
-    border-bottom: 2px solid #3498db;
+    border-bottom-color: #3498db;
 }
 
 
 /* Main Content Sections */
 .section {
     padding: 40px 0;
-    border-bottom: 1px solid #ddd; /* Separator line */
+    border-bottom: 1px solid #ddd;
 }
 
 .section:last-child {
-    border-bottom: none; /* No border after the last section */
+    border-bottom: none;
 }
 
 .section-title {
@@ -117,23 +147,22 @@ h1, h2, h3 {
     margin-top: 0;
     margin-bottom: 30px;
     font-size: 2em;
-    position: relative; /* For the line under the title */
+    position: relative;
 }
 
-/* Optional: Add a subtle line under section titles */
 .section-title::after {
     content: '';
     display: block;
-    width: 60px; /* Length of the line */
+    width: 60px;
     height: 3px;
-    background-color: #3498db; /* Blue accent */
-    margin: 10px auto 0; /* Center the line */
+    background-color: #3498db;
+    margin: 10px auto 0;
 }
 
-/* Skills Section Specifics */
+/* Skills Section Specifics (Keep as before) */
 .skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -141,7 +170,7 @@ h1, h2, h3 {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 1.1em;
-    color: #34495e; /* Slightly darker blue/grey */
+    color: #34495e;
 }
 
 .skill-category p {
@@ -150,11 +179,130 @@ h1, h2, h3 {
     color: #555;
 }
 
-/* Experience & Education Entry Styling */
+
+/* --- NEW: Projects Gallery Styling --- */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid for gallery items */
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Hide content overflowing rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.project-card {
+    display: block; /* Make the whole card area clickable via the label */
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+}
+
+.project-card img {
+    display: block;
+    width: 100%; /* Make image fill the card width */
+    height: 180px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Crop image to fit without distorting */
+    border-bottom: 1px solid #eee;
+}
+
+.project-card h3 {
+    margin: 15px 10px; /* Space inside the card */
+    font-size: 1.2em;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Hide the checkbox visually */
+.project-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project-details {
+    max-height: 0; /* Initially hide the details */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Smooth expansion */
+    padding: 0 15px; /* Add horizontal padding */
+    margin-top: 0;
+    margin-bottom: 0; /* Ensure no space when collapsed */
+}
+
+/* Show details when the corresponding checkbox is checked */
+.project-toggle:checked ~ .project-details {
+    max-height: 2000px; /* Needs to be large enough to fit content. Adjust as needed */
+    padding: 15px; /* Add padding when expanded */
+    margin-bottom: 15px; /* Add space below details */
+    border-top: 1px solid #eee; /* Separator */
+}
+
+/* Styling for content within project details */
+.project-details p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.project-details .project-details-visuals {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center; /* Center visuals */
+}
+
+.project-details .project-details-visuals img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto; /* Center images */
+    border: 1px solid #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.project-details .project-details-visuals .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Placeholder background */
+    margin: 15px auto;
+}
+
+.project-details .project-details-visuals .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-details .image-caption,
+.project-details .video-caption {
+     font-size: 0.85em;
+     color: #777;
+     margin-top: 5px;
+     margin-bottom: 15px;
+     font-style: italic;
+}
+
+/* --- End Projects Gallery Styling --- */
+
+
+/* Experience & Education Entry Styling (Keep as before) */
 .job-entry, .education-entry, .teaching-entry {
-    margin-bottom: 30px; /* Space between entries */
+    margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed #eee; /* Subtle separator */
+    border-bottom: 1px dashed #eee;
 }
 
 .job-entry:last-child, .education-entry:last-child, .teaching-entry:last-child {
@@ -163,9 +311,9 @@ h1, h2, h3 {
 
 .job-header, .education-header, .teaching-header {
     display: flex;
-    justify-content: space-between; /* Puts title on left, date on right */
-    align-items: baseline; /* Align text bottoms */
-    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
     margin-bottom: 5px;
 }
 
@@ -178,7 +326,7 @@ h1, h2, h3 {
 .job-date, .education-date, .teaching-date {
     font-size: 0.9em;
     color: #666;
-    flex-shrink: 0; /* Prevent date from shrinking */
+    flex-shrink: 0;
 }
 
 .job-org, .education-degree, .education-location, .teaching-org, .teaching-location {
@@ -201,7 +349,7 @@ h1, h2, h3 {
 
 .job-description, .education-details, .teaching-details {
     margin: 10px 0 0 0;
-    padding-left: 20px; /* Indent bullet points */
+    padding-left: 20px;
 }
 
 .job-description li, .education-details li, .teaching-details li {
@@ -210,9 +358,9 @@ h1, h2, h3 {
 }
 
 
-/* Awards & Publications Styling */
+/* Awards & Publications Styling (Keep as before) */
 .awards-list, .publications-list {
-    list-style: disc; /* Use standard bullets */
+    list-style: disc;
     padding-left: 20px;
     color: #555;
 }
@@ -223,15 +371,14 @@ h1, h2, h3 {
 }
 
 .publication-citation {
-     /* Style publication text if needed, e.g., smaller font */
      font-size: 0.95em;
 }
 
 
 /* Footer Styling */
 .site-footer {
-    background-color: #34495e; /* Darker blue/grey */
-    color: #ecf0f1; /* Light text */
+    background-color: #34495e;
+    color: #ecf0f1;
     text-align: center;
     padding: 20px 0;
     font-size: 0.9em;
@@ -242,45 +389,57 @@ h1, h2, h3 {
     margin: 5px 0;
 }
 
-.footer-contact a {
-    color: #ecf0f1; /* Light text color */
-    text-decoration: none;
-    margin: 0 10px;
+.footer-contact-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-.footer-contact a:hover {
-    text-decoration: underline;
+.footer-contact-buttons .contact-button {
+    /* Inherit button styles */
+    font-size: 0.9em;
+    padding: 5px 10px; /* Slightly smaller padding */
 }
+
 
 /* Responsive Adjustments */
 @media (min-width: 768px) {
     .header-content {
-        flex-direction: row; /* Side-by-side layout on larger screens */
+        flex-direction: row;
         text-align: left;
-        justify-content: space-between; /* Push text left, photo right */
+        justify-content: space-between;
+         align-items: flex-start; /* Align items to the top */
     }
 
     .header-text {
-        flex-grow: 1; /* Allow text area to grow */
-        padding-right: 20px; /* Add space between text and potential photo */
+        flex-grow: 1;
+        padding-right: 20px;
     }
 
      .site-nav ul {
-         gap: 30px; /* Increase space between links on larger screens */
+         gap: 30px;
      }
 
      .job-header, .education-header, .teaching-header {
-         flex-direction: row; /* Side by side title and date */
+         flex-direction: row;
      }
 
      .job-header h3, .education-header h3, .teaching-header h3 {
-         margin-right: 15px; /* Space between title and date */
+         margin-right: 15px;
+     }
+
+     .footer-contact-buttons {
+         /* Center on smaller screens, keep simple flex on larger */
      }
 
     /* Optional photo alignment */
-    /*
-    .header-photo {
-        align-self: flex-start; /* Align photo to the top if text area is taller *\/
+    /* (Keep as before if using) */
+}
+
+/* Media query for responsive video */
+@media (max-width: 599px) {
+    .project-details .project-details-visuals .video-container iframe {
+        /* Adjust height or width if needed for very small screens */
     }
-    */
 }
