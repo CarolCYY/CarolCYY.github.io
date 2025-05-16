@@ -1,0 +1,286 @@
+/* Basic Reset */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Or your chosen font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Or your chosen heading font */
+    color: #2c3e50; /* Dark blue/grey */
+}
+
+.container {
+    max-width: 1000px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding on the sides */
+}
+
+/* Header Styling */
+.site-header {
+    background-color: #ecf0f1; /* Light grey/blue */
+    padding: 20px 0;
+    border-bottom: 3px solid #3498db; /* Blue accent */
+    text-align: center; /* Center header content initially */
+}
+
+.header-content {
+    /* Use flexbox for potential photo/text layout on larger screens */
+    display: flex;
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center;
+    gap: 20px; /* Space between text and photo */
+}
+
+.header-text h1 {
+    margin: 0 0 5px 0;
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.header-text .title {
+    margin: 0 0 15px 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.contact-info {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Optional Photo Styling */
+/*
+.header-photo img {
+    border-radius: 50%; /* Circle photo *\/
+    width: 120px; /* Adjust size *\/
+    height: 120px;
+    object-fit: cover; /* Ensure photo covers the area *\/
+    border: 3px solid #fff; /* White border around photo *\/
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+*/
+
+/* Navigation Styling */
+.site-nav {
+    margin-top: 20px;
+}
+
+.site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange links horizontally */
+    justify-content: center; /* Center the links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    gap: 15px; /* Space between links */
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+
+/* Main Content Sections */
+.section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd; /* Separator line */
+}
+
+.section:last-child {
+    border-bottom: none; /* No border after the last section */
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 2em;
+    position: relative; /* For the line under the title */
+}
+
+/* Optional: Add a subtle line under section titles */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px; /* Length of the line */
+    height: 3px;
+    background-color: #3498db; /* Blue accent */
+    margin: 10px auto 0; /* Center the line */
+}
+
+/* Skills Section Specifics */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #34495e; /* Slightly darker blue/grey */
+}
+
+.skill-category p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Experience & Education Entry Styling */
+.job-entry, .education-entry, .teaching-entry {
+    margin-bottom: 30px; /* Space between entries */
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee; /* Subtle separator */
+}
+
+.job-entry:last-child, .education-entry:last-child, .teaching-entry:last-child {
+    border-bottom: none;
+}
+
+.job-header, .education-header, .teaching-header {
+    display: flex;
+    justify-content: space-between; /* Puts title on left, date on right */
+    align-items: baseline; /* Align text bottoms */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    margin-bottom: 5px;
+}
+
+.job-header h3, .education-header h3, .teaching-header h3 {
+     margin: 0;
+     font-size: 1.3em;
+     color: #2c3e50;
+}
+
+.job-date, .education-date, .teaching-date {
+    font-size: 0.9em;
+    color: #666;
+    flex-shrink: 0; /* Prevent date from shrinking */
+}
+
+.job-org, .education-degree, .education-location, .teaching-org, .teaching-location {
+    margin: 0 0 5px 0;
+    color: #444;
+    font-weight: 500;
+}
+
+.job-location, .education-location {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.education-courses {
+    margin: 5px 0 0 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.job-description, .education-details, .teaching-details {
+    margin: 10px 0 0 0;
+    padding-left: 20px; /* Indent bullet points */
+}
+
+.job-description li, .education-details li, .teaching-details li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+
+/* Awards & Publications Styling */
+.awards-list, .publications-list {
+    list-style: disc; /* Use standard bullets */
+    padding-left: 20px;
+    color: #555;
+}
+
+.awards-list li, .publications-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.publication-citation {
+     /* Style publication text if needed, e.g., smaller font */
+     font-size: 0.95em;
+}
+
+
+/* Footer Styling */
+.site-footer {
+    background-color: #34495e; /* Darker blue/grey */
+    color: #ecf0f1; /* Light text */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #ecf0f1; /* Light text color */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row; /* Side-by-side layout on larger screens */
+        text-align: left;
+        justify-content: space-between; /* Push text left, photo right */
+    }
+
+    .header-text {
+        flex-grow: 1; /* Allow text area to grow */
+        padding-right: 20px; /* Add space between text and potential photo */
+    }
+
+     .site-nav ul {
+         gap: 30px; /* Increase space between links on larger screens */
+     }
+
+     .job-header, .education-header, .teaching-header {
+         flex-direction: row; /* Side by side title and date */
+     }
+
+     .job-header h3, .education-header h3, .teaching-header h3 {
+         margin-right: 15px; /* Space between title and date */
+     }
+
+    /* Optional photo alignment */
+    /*
+    .header-photo {
+        align-self: flex-start; /* Align photo to the top if text area is taller *\/
+    }
+    */
+}
