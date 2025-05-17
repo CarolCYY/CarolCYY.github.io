@@ -7,6 +7,8 @@
     --border-color: #eee; /* Light border/separator */
     --box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     --hover-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --skill-tag-bg: #e0f7fa; /* Light teal for skill tags */
+    --skill-tag-color: #007788; /* Darker teal for skill tag text */
 }
 
 html {
@@ -177,7 +179,7 @@ a:hover {
 }
 
 
-/* Main Content Sections - Used on Home and Resume pages */
+/* Main Content Sections - Standard spacing */
 .section {
     padding: 60px 0;
     background-color: var(--card-background);
@@ -189,6 +191,12 @@ a:hover {
 .section:nth-child(even) { /* Even sections are light grey */
     background-color: var(--background-color);
 }
+
+/* Special style for the first section on Home page if it's intro */
+.intro-section + .section { /* The section immediately after intro */
+    border-top: 1px solid var(--border-color); /* Add separator */
+}
+
 
 .section-title {
     text-align: center;
@@ -242,45 +250,16 @@ a:hover {
      color: var(--primary-color);
 }
 
-
-/* Skills Section Specifics (Keep as before) */
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.skill-category {
-    background-color: var(--card-background);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
-}
-
-.skill-category h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    color: var(--primary-color);
-}
-
-.skill-category p {
-    margin: 0;
-    font-size: 0.95em;
-    color: #555;
-}
-
-
-/* --- Projects Gallery Styling (projects.html) --- */
-#projects {
-    padding-top: 60px; /* Standard section padding */
+/* --- Projects Gallery Styling (on index.html now) --- */
+#projects.section-title { /* If #projects is a title only */
+    /* Use standard section-title */
 }
 
 .projects-gallery {
     display: grid;
-    grid-template-columns: 1fr; /* Single column on large screens */
-    gap: 40px; /* More space between project items */
-    max-width: 800px; /* Constrain the width of the single column */
+    grid-template-columns: 1fr; /* Single column always */
+    gap: 40px; /* Space between project items */
+    max-width: 900px; /* Constrain the width of the single column */
     margin: 0 auto; /* Center the single column */
 }
 
@@ -291,9 +270,7 @@ a:hover {
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-color); /* Add subtle border */
+    border: 1px solid var(--border-color);
 }
 
 .project-item:hover {
@@ -303,55 +280,59 @@ a:hover {
 
 .project-card { /* This is the link wrapper */
     display: flex; /* Use flex for layout within the card */
-    flex-direction: row; /* Image and text side-by-side on large screens */
-    align-items: center;
+    flex-direction: row; /* Image and text side-by-side */
+    align-items: stretch; /* Stretch items to fill height */
     text-decoration: none;
     color: inherit;
-    padding: 20px; /* Add padding inside the card */
-    gap: 20px; /* Space between image and text */
 }
 
 .project-card img {
     display: block;
-    width: 200px; /* Fixed width for thumbnail */
-    height: 150px; /* Fixed height */
+    width: 250px; /* Fixed width for thumbnail */
+    height: auto; /* Height is determined by content */
     object-fit: cover;
-    border-radius: 4px; /* Rounded corners for image */
+    border-right: 1px solid var(--border-color); /* Separator between image and text */
     flex-shrink: 0; /* Prevent image from shrinking */
 }
 
-.project-card h3 {
-    margin: 0;
-    font-size: 1.4em; /* Larger title */
-    color: var(--secondary-color);
-    text-align: left; /* Align text left */
-    flex-grow: 1; /* Allow text to grow */
+.project-card-content { /* New div for text content */
+    padding: 20px; /* Add padding inside the text area */
+    flex-grow: 1; /* Allow content to grow */
+    display: flex;
+    flex-direction: column; /* Stack title, institution, skills */
 }
 
-/* Adjust project card layout for smaller screens */
-@media (max-width: 768px) {
-    .projects-gallery {
-        max-width: 100%; /* Allow full width on smaller screens */
-        padding: 0 20px; /* Add side padding */
-    }
+.project-card-content h3 {
+    margin: 0 0 5px 0; /* Space below title */
+    font-size: 1.4em;
+    color: var(--secondary-color);
+    flex-grow: 1; /* Allow title area to grow */
+}
 
-    .project-card {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
+.project-institution { /* New style for institution name */
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px; /* Space below institution */
+    font-weight: 400;
+}
 
-    .project-card img {
-        width: 100%; /* Image takes full width */
-        height: auto; /* Auto height to maintain aspect ratio */
-        max-height: 200px; /* Optional: max height to avoid overly large images */
-    }
+.project-skills { /* Container for skills */
+    margin-top: auto; /* Push skills to the bottom */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between tags */
+}
 
-    .project-card h3 {
-        font-size: 1.2em;
-        text-align: center;
-    }
+.skill-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--skill-tag-bg);
+    color: var(--skill-tag-color);
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.8em;
+    font-weight: 500;
+    text-transform: lowercase;
+    white-space: nowrap; /* Prevent tags from breaking */
 }
 
 
@@ -597,26 +578,16 @@ a:hover {
      }
 
      /* Adjust project card layout on larger screens */
-    .projects-gallery {
-         grid-template-columns: 1fr; /* Explicitly single column */
+     .project-card {
+         flex-direction: row; /* Side-by-side */
+         align-items: stretch; /* Stretch items to fill height */
      }
 
-    .project-card {
-         flex-direction: row; /* Side-by-side */
-         align-items: center;
-         text-align: left;
-    }
-
-    .project-card img {
-        width: 250px; /* Slightly wider image */
-        height: 180px; /* Slightly taller image */
-        max-height: none; /* Remove max height from mobile style */
-    }
-
-    .project-card h3 {
-        font-size: 1.4em;
-        text-align: left;
-    }
+     .project-card img {
+        width: 250px; /* Fixed width */
+        height: auto; /* Height determined by content */
+        max-height: none;
+     }
 }
 
 /* Wider screens might benefit from slightly larger typography */
@@ -629,4 +600,44 @@ a:hover {
 
      .intro-section h2 { font-size: 3.5em; }
      .intro-section p { font-size: 1.4em; }
+}
+
+/* Ensure image and content stack on small screens */
+@media (max-width: 767px) {
+    .project-card {
+        flex-direction: column; /* Stack vertically */
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding: 15px; /* Slightly less padding on small screens */
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        max-height: 200px; /* Limit image height */
+        border-right: none; /* Remove vertical border */
+        border-bottom: 1px solid var(--border-color); /* Add horizontal border */
+        margin-bottom: 15px;
+    }
+
+    .project-card-content {
+        padding: 0; /* Remove padding from inner div */
+        text-align: center;
+    }
+
+     .project-card-content h3 {
+        font-size: 1.2em;
+        text-align: center;
+        margin-bottom: 5px;
+     }
+
+     .project-institution {
+         text-align: center;
+     }
+
+     .project-skills {
+         justify-content: center; /* Center the tags */
+         margin-top: 10px; /* Space above tags */
+     }
 }
