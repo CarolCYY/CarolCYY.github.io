@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carol Chan - Publications</title> <!-- Update title -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+     <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+     <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Carol Chan</h1>
+                    <p class="title"> Astronomy PhD Candidate | Instrumentalist | Researcher</p>
+                </div>
+                <div class="header-contact-icons">
+                     <a href="mailto:ychan19@jhu.edu" class="icon-button" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                     <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="icon-button" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                 </div>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li> <!-- Link to Home -->
+                    <li><a href="index.html#projects">Projects</a></li> <!-- Link to Projects section on Home -->
+                    <li><a href="files/carol_chan_resume.pdf" target="_blank">Resume</a></li> <!-- Link to PDF -->
+                    <li><a href="publications.html" class="active">Publications</a></li> <!-- New Publications link, active -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Publications Section - Moved here -->
+        <section id="publications" class="section container">
+            <h2 class="section-title">Selected Publications</h2>
+            <!-- !!! COPY THE CONTENT OF THE #publications DIV FROM resume.html HERE !!! -->
+            <!-- It should look like this: -->
+            <ul class="publications-list">
+                <li><span class="publication-citation"><strong>Chan, C. Y. Y.</strong>, Ryan C., Li Y., et al. (2025). Impact of Azimuth Synchronous Signal on CLASS (manuscript in preparation)</span></li>
+                <li><span class="publication-citation">Shi, R., Brewer, M. K., <strong>Chan, C. Y. Y.</strong>, Chuss, D. T., Couto, J. D., Eimer, J. R., et al. (2024). Design and characterization of a 60-cm reflective half-wave plate for the CLASS 90 GHz band telescope. In Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XII (Vol. 13102, pp. 688-710). SPIE.</span></li>
+                <li><span class="publication-citation">Barlis, A., Guo, H., Helson, K., Bennett, C., <strong>Chan, C. Y. Y.</strong>, Marriage, T., ... & Essinger-Hileman, T. (2024). Fabrication and characterization of optical filters from polymeric aerogels loaded with diamond scattering particles. Applied Optics, 63(22), 6036-6051.</span></li>
+                <li><span class="publication-citation">Lau, A. W. K., <strong>Chan, C. Y. Y.</strong>, Shafiee, M., Smoot, G. F., & Grossan, B. (2022, August). Development of position-sensitive photon-counting imager for ultra-fast astronomy. In X-Ray, Optical, and Infrared Detectors for Astronomy X (Vol. 12191, pp. 312-329). SPIE. </span></li>
+            </ul>
+            <p class="google-scholar-link">
+                 For full publication list, visit my <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=-b--cXEAAAAJ&gmla=AIfU4H7H78augvEu4wd6mMaBIVaX_xw3L0y8UXtTae_vdl9X1IprwHSGYCRk7d9KhvHNeWdmx8fXWUJJIMGYQqMUZNfcQBkZdBWTj1" target="_blank" rel="noopener noreferrer">Google Scholar profile</a>.
+             </p>
+        </section>
+        <!-- End Publications Section -->
+    </main>
+
+    <footer class="site-footer">
+         <div class="container" id="contact">
+             <p>© <span id="current-year"></span> Carol Yan-Yan Chan. All rights reserved.</p>
+             <!-- Replace the footer-contact-buttons div with the block below -->
+             <div class="footer-contact-info">
+                 <p>
+                     <a href="mailto:ychan19@jhu.edu" class="footer-contact-link">
+                         <i class="fas fa-envelope"></i> ychan19@jhu.edu
+                     </a>
+                 </p>
+                 <p>
+                     <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                         <i class="fab fa-linkedin"></i> linkedin.com/in/carolyanyanchan
+                     </a>
+                 </p>
+             </div>
+             <!-- End of new block -->
+         </div>
+     </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

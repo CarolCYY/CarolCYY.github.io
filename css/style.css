@@ -1,14 +1,18 @@
 /* General Styles - Inspired by f7.de minimal design */
 :root {
-    --primary-color: #00BCD4; /* Teal/Cyan accent color */
-    --secondary-color: #333; /* Dark text color */
+    --primary-color: #4fb2b6; /* Teal/Cyan accent color */
+    --primary-color2: #8457a8; /* Secondary gradient color */
+    --secondary-color: #383535; /* Dark text color */
     --background-color: #f8f8f8; /* Light grey background */
     --card-background: #ffffff; /* White for cards/elements */
     --border-color: #eee; /* Light border/separator */
-    --box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    --hover-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    --skill-tag-bg: #e0f7fa; /* Light teal for skill tags */
-    --skill-tag-color: #007788; /* Darker teal for skill tag text */
+    --box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* More pronounced shadow */
+    --hover-shadow: 0 15px 25px rgba(0,0,0,0.3); /* Stronger hover shadow */
+    --skill-tag-bg: rgba(255, 255, 255, 0.25); /* Semi-transparent white for skill tags on dark bg */
+    --skill-tag-color: white; /* White text for skill tags */
+    --overlay-color: rgba(0, 0, 0, 0.5); /* Dark overlay, slightly less opaque */
+    --project-text-color: white; /* Color for text on project cards */
+    --photo-border-color: white; /* White border color for profile photo */
 }
 
 html {
@@ -97,18 +101,21 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Reduced gap */
-    padding-bottom: 10px; /* Space before nav */
+    gap: 10px;
+    padding-bottom: 10px;
+    /* padding-right is added in media query */
+    box-sizing: border-box;
+    position: relative;
 }
 
 .header-text {
-    /* Text alignment handled by flex centering on small screens */
+    flex-grow: 1;
 }
 
 .header-text h1 {
     margin: 0;
-    font-size: 2em; /* Reduced font size */
-    color: var(--secondary-color);
+    font-size: 2em;
+    color: var(--primary-color); /* Assuming you changed name color */
 }
 
 .header-text .title {
@@ -118,34 +125,45 @@ a:hover {
     font-weight: 400;
 }
 
-/* Contact Buttons Styling - Use outline style */
-.header-contact-buttons {
-    margin-top: 10px;
+/* Header Contact Icons Styling */
+.header-contact-icons {
+    /* position: absolute; applied in media query */
+    /* top/right/etc. applied in media query */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    z-index: 1001;
 }
 
-.button {
-    display: inline-block;
-    padding: 8px 15px;
+/* Style for icon buttons */
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background-color: transparent;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    font-size: 0.95em;
-    font-weight: 500;
+    font-size: 1.2em;
     cursor: pointer;
 }
 
-.button:hover {
+.icon-button:hover {
     background-color: var(--primary-color);
     color: var(--card-background);
+    border-color: var(--primary-color);
     text-decoration: none;
 }
+
+.icon-button i {
+    /* No extra styling */
+}
+
 
 /* Navigation Styling */
 .site-nav {
@@ -173,7 +191,7 @@ a:hover {
 }
 
 .site-nav a:hover,
-.site-nav a.active { /* Style for active page link */
+.site-nav a.active {
     color: var(--primary-color);
     border-bottom-color: var(--primary-color);
 }
@@ -185,17 +203,17 @@ a:hover {
     background-color: var(--card-background);
 }
 
-.section:nth-child(odd) { /* Odd sections are white */
+.section:nth-child(odd) {
     background-color: var(--card-background);
 }
-.section:nth-child(even) { /* Even sections are light grey */
+.section:nth-child(even) {
     background-color: var(--background-color);
 }
 
-/* Special style for the first section on Home page if it's intro */
-.intro-section + .section { /* The section immediately after intro */
-    border-top: 1px solid var(--border-color); /* Add separator */
-}
+/* Removed .intro-section + .section border - not needed with photo section inside */
+/* .intro-section + .section {
+    border-top: 1px solid var(--border-color);
+} */
 
 
 .section-title {
@@ -221,28 +239,61 @@ a:hover {
 /* Home Page Specific - Intro Section */
 .intro-section {
     text-align: center;
-    padding: 80px 0 60px 0; /* More padding for the top section */
-    background-color: var(--primary-color); /* Accent background */
-    color: white; /* White text on accent background */
+    padding: 80px 0 60px 0; /* Adjust bottom padding to make space for skills/button */
+    background: linear-gradient(55deg, var(--primary-color), var(--primary-color2)); /* Assuming gradient added */
+    color: white;
 }
+
+/* New: Profile Picture inside Intro Section */
+/* Style for the container div around the profile photo inside intro */
+.intro-section .profile-picture {
+    margin-bottom: 20px; /* Space below the photo container */
+    /* text-align: center is inherited from intro-section parent */
+}
+
+/* Style for the actual profile image inside intro */
+.intro-section .profile-picture img {
+    display: inline-block; /* Treat img as inline-block for centering */
+    width: 200px; /* Default size */
+    height: 200px; /* Make it square */
+    object-fit: cover; /* Crop image to fit */
+    border-radius: 50%; /* Make it circular */
+    border-width: 4px; /* Default border thickness */
+    border-style: solid;
+    border-color: white; /* White border color in intro section */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Shadow */
+    transition: transform 0.3s ease; /* Optional hover effect */
+}
+
+
 
 .intro-section h2 {
     font-size: 3em;
     font-weight: 700;
     margin-bottom: 10px;
-    color: white; /* Ensure heading is white */
+    color: white;
+    /* Assuming you tried to add font-family here */
+    /* font-family: 'Cosmic Sans', sans-serif; */
+    /* To ensure it uses Poppins (heading font), explicitly set it: */
+    font-family: 'Poppins', sans-serif;
 }
 
 .intro-section p {
-    font-size: 1.3em;
+    font-size: 0.5em;
     font-weight: 300;
     margin-bottom: 20px;
-    color: rgba(255,255,255,0.9); /* Slightly transparent white */
+    color: rgba(255,255,255,0.9);
+    /* Assuming you tried to add font-family here */
+    /* font-family: 'Cosmic Sans', sans-serif; */
+    /* To ensure it uses Inter (body font), explicitly set it: */
+     font-family: 'Inter', sans-serif;
 }
 
-.intro-section .button {
+.intro-section .button { /* Buttons in intro section */
      border-color: white;
      color: white;
+     margin: 0 10px; /* Space between buttons */
+     margin-top: 10px; /* Space above buttons */
 }
 
 .intro-section .button:hover {
@@ -251,118 +302,231 @@ a:hover {
 }
 
 /* --- Projects Gallery Styling (on index.html now) --- */
-#projects.section-title { /* If #projects is a title only */
+#projects {
+    /* Use standard section padding */
+}
+
+#projects > .section-title {
     /* Use standard section-title */
 }
+
+.projects-instruction {
+    /* Ensure text-align is center */
+    text-align: center; /* <-- Confirm this is present */
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-top: -20px;
+    margin-bottom: 40px;
+    /* Add these lines to ensure it takes full width and handles potential inline issues */
+    display: block; /* Ensure it's treated as a block element */
+    width: 100%; /* Make it take full width */
+}
+
 
 .projects-gallery {
     display: grid;
     grid-template-columns: 1fr; /* Single column always */
-    gap: 40px; /* Space between project items */
-    max-width: 900px; /* Constrain the width of the single column */
-    margin: 0 auto; /* Center the single column */
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
+/* Project Card Item (The container div) */
 .project-item {
-    background-color: var(--card-background);
+    display: block; /* Allows margin auto for centering */
+    position: relative; /* Needed for absolute positioning of children */
+    /* Removed fixed height */
+    /* height: 350px; */
+    min-height: 300px; /* Ensure a minimum height for the visual part */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 1px solid var(--border-color);
+    text-decoration: none;
+    background-color: var(--card-background); /* Fallback background */
+    /* Removed background properties - they are on .project-card-visuals */
+    border: 1px solid var(--border-color); /* Add subtle border */
 }
 
+/* Lift effect on hover applies to the whole item */
 .project-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--hover-shadow);
 }
 
-.project-card { /* This is the link wrapper */
-    display: flex; /* Use flex for layout within the card */
-    flex-direction: row; /* Image and text side-by-side */
-    align-items: stretch; /* Stretch items to fill height */
-    text-decoration: none;
-    color: inherit;
+/* --- New: Dropdown Project Details Styling --- */
+/* Hide the checkbox visually */
+.project-toggle {
+    position: absolute; /* Needed to allow stacking contexts */
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1; /* Ensure it doesn't interfere */
 }
 
-.project-card img {
-    display: block;
-    width: 250px; /* Fixed width for thumbnail */
-    height: auto; /* Height is determined by content */
-    object-fit: cover;
-    border-right: 1px solid var(--border-color); /* Separator between image and text */
-    flex-shrink: 0; /* Prevent image from shrinking */
+/* Style for the label that acts as the clickable card */
+.project-card-label {
+    display: block; /* Make the whole label clickable */
+    position: relative;
+    height: 350px; /* Give the visual part a fixed height */
+    cursor: pointer;
+    z-index: 1; /* Ensure the clickable label is above the details when collapsed */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    overflow: hidden; /* Hide overflow from rounded corners */
 }
 
-.project-card-content { /* New div for text content */
-    padding: 20px; /* Add padding inside the text area */
-    flex-grow: 1; /* Allow content to grow */
+/* Style for the visual part of the card */
+.project-card-visuals {
+    position: relative;
+    height: 100%; /* Fill the height of the label */
+    background-color: var(--card-background); /* Fallback background */
+    background-size: cover;
+    background-position: center;
+    /* background-image is set inline in HTML */
+    /* border-radius and overflow handled by project-card-label */
+}
+
+
+/* Dark Overlay */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.project-item:hover .project-overlay { /* Hover effect on the whole item */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker on hover */
+}
+
+
+/* Content on top of the image */
+.project-card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 25px;
+    box-sizing: border-box;
+    color: var(--project-text-color);
     display: flex;
-    flex-direction: column; /* Stack title, institution, skills */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-card-content h3 {
-    margin: 0 0 5px 0; /* Space below title */
-    font-size: 1.4em;
-    color: var(--secondary-color);
-    flex-grow: 1; /* Allow title area to grow */
+    color: var(--project-text-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 2em;
+    font-weight: 700;
+    flex-grow: 1; /* Allows title area to push other content */
 }
 
-.project-institution { /* New style for institution name */
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 10px; /* Space below institution */
-    font-weight: 400;
+/* Institution and Skills Positioning */
+.project-institution {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
-.project-skills { /* Container for skills */
-    margin-top: auto; /* Push skills to the bottom */
+.project-card-content .project-short-description {
+    font-size: 0.95em; /* Adjust font size */
+    color: white; /* Adjust text color */
+    margin-top: 0; /* Should have space below title */
+    margin-bottom: 10px; /* Space below the description */
+    line-height: 1.4; /* Adjust line height for readability */
+    /* Optional: Add text overflow properties if you want to limit lines */
+    /*
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // Limit to 2 lines
+    -webkit-box-orient: vertical;
+    */
+}
+
+.project-skills {
+    margin-top: auto; /* Push skills to the bottom of content */
     display: flex;
     flex-wrap: wrap;
-    gap: 8px; /* Space between tags */
+    gap: 8px;
+    margin-bottom: 0; /* No space below skills */
 }
 
+/* Skill Tags Styling */
 .skill-tag {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 2px 8px;
     background-color: var(--skill-tag-bg);
     color: var(--skill-tag-color);
-    border-radius: 20px; /* Pill shape */
-    font-size: 0.8em;
-    font-weight: 500;
-    text-transform: lowercase;
-    white-space: nowrap; /* Prevent tags from breaking */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 300;
+    text-transform: capitalize;
+    white-space: nowrap;
+    backdrop-filter: blur(1px); /* Reduced blur */
+    -webkit-backdrop-filter: blur(1px); /* For Safari */
+    /* Removed absolute positioning and z-index */
+    /* position: relative; */
+    /* bottom: 60px; */
+    /* z-index: 2; */
 }
 
 
-/* --- Project Detail Page Styling (projects/*.html) --- */
-.project-detail-content {
-    padding: 60px 0; /* Standard section padding */
-    background-color: var(--card-background); /* White background */
+/* Style for the dropdown details area */
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
+    padding: 0 25px; /* Initial horizontal padding, 0 vertical */
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #fefefe;
+    border-top: 1px solid var(--border-color);
+    /* z-index: 0; */
 }
 
-.project-detail-content .container {
-    /* Use the standard container max-width */
+/* Show details when the corresponding checkbox is checked */
+.project-toggle:checked ~ .project-details {
+    max-height: 3000px; /* Large enough to fit content */
+    padding: 25px; /* Add full padding when expanded */
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0 0 8px 8px;
 }
 
-.project-detail-content h2 {
-    /* Use standard section-title style */
-    text-align: left; /* Align title left on detail pages */
-    margin-left: 0;
-    margin-right: 0;
-}
-.project-detail-content h2::after {
-    margin: 15px 0 0 0; /* Align underline left */
+/* Styling for content within project details */
+.project-details h4 { /* Title inside details */
+    font-size: 1.5em;
+    margin-bottom: 20px;
 }
 
-
-.project-detail-content p {
+.project-details p {
     margin-bottom: 15px;
     color: #444;
 }
 
-.project-details-visuals { /* Reuse class name, adapt styles */
+.project-details ul { /* Lists within details */
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    list-style: disc;
+    color: #444;
+}
+.project-details ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.project-details-visuals {
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
@@ -371,21 +535,26 @@ a:hover {
     border-radius: 8px;
 }
 
-.project-details-visuals h4 {
+.project-details-visuals h5 { /* Sub-title for visuals */
+    font-size: 1.1em;
     margin-top: 0;
     margin-bottom: 20px;
     color: var(--secondary-color);
-    text-align: left; /* Align visual headings left */
+    text-align: left;
 }
 
-.project-details-visuals img {
+
+.project-details-visuals img,
+.project-details-visuals video { /* <-- Add ', .project-details-visuals video' here */
     display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 15px auto; /* Center images */
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 4px;
+    max-width: 90%;
+    max-height: 400px;
+    height: auto; /* This might not be necessary for the video *inside* the container, but good practice */
+    margin: 15px auto; /* Center the block element */
+    /* Border/shadow might not apply well to the video player itself depending on browser */
+    /* border: 1px solid var(--border-color); */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    /* border-radius: 4px; */
 }
 
 .project-details-visuals .video-container {
@@ -399,7 +568,8 @@ a:hover {
     border-radius: 4px;
 }
 
-.project-details-visuals .video-container iframe {
+.project-details-visuals .video-container iframe,
+.project-details-visuals .video-container video { 
     position: absolute;
     top: 0;
     left: 0;
@@ -417,14 +587,29 @@ a:hover {
      text-align: center;
 }
 
-.back-button-container {
-    margin-top: 30px;
-    text-align: center;
+
+/* Style for the close button within details */
+.close-button {
+     display: block;
+     width: max-content;
+     margin: 20px auto 0 auto;
+     /* Use .button styles */
+     background-color: var(--background-color);
+     color: var(--secondary-color);
+     border-color: var(--border-color);
+     padding: 8px 15px;
+     font-size: 0.95em;
 }
+
+.close-button:hover {
+     background-color: var(--border-color);
+     color: var(--secondary-color);
+}
+/* --- End Project Details Dropdown Styling --- */
+
 
 
 /* Experience & Education Entry Styling (Used on resume.html) */
-/* Keep previous styles largely the same */
 .job-entry, .education-entry, .teaching-entry {
     margin-bottom: 30px;
     padding-bottom: 20px;
@@ -491,10 +676,10 @@ a:hover {
 }
 
 /* Awards & Publications Styling (Used on resume.html) */
-/* Keep previous styles largely the same */
 .awards-list, .publications-list {
     list-style: disc;
-    padding-left: 25px;
+    padding-left: 80px;
+    padding-right: 80px;
     color: #444;
 }
 
@@ -507,6 +692,18 @@ a:hover {
 .publication-citation {
      font-size: 0.95em;
      color: #555;
+}
+
+.google-scholar-link { /* <-- Find or add this rule */
+    /* Removed text-align: center */
+    /* text-align: center; */
+    font-size: 1em; /* Slightly smaller font */
+    color: #555; /* Grey color from the image */
+    margin-top: 25px; /* Space above the paragraph */
+    /* Add these padding/margin lines for indentation */
+    padding-left: 80px; /* Match the list indentation */
+    padding-right: 80px; /* Add padding on the right */
+    margin-bottom: 0; /* No margin below */
 }
 
 
@@ -525,25 +722,45 @@ a:hover {
     color: #ccc;
 }
 
-.footer-contact-buttons {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* --- New: Footer Contact Info Styling --- */
+.footer-contact-info {
+    margin-top: 15px; /* Space above the contact block */
 }
 
-.footer-contact-buttons .button {
-    border-color: rgba(255,255,255,0.3);
-    color: var(--background-color);
-    padding: 5px 10px;
-    font-size: 0.85em;
+.footer-contact-info p {
+    margin: 5px 0; /* Space between contact items */
+    text-align: center; /* Center the text and links */
 }
 
-.footer-contact-buttons .button:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: var(--card-background);
+.footer-contact-link {
+    color: var(--background-color); /* Use the light background color for text */
+    text-decoration: none;
+    font-size: 1em; /* Adjust font size as needed */
+    transition: color 0.3s ease;
+    display: inline-flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Vertically center icon and text */
 }
 
+.footer-contact-link:hover {
+    color: rgba(255,255,255,0.8); /* Slightly grey out on hover */
+    text-decoration: underline;
+}
+
+.footer-contact-link i {
+    margin-right: 8px; /* Space between the icon and the text */
+    font-size: 1.1em; /* Adjust icon size */
+}
+
+/* Adjustments for small screens if needed */
+@media (max-width: 767px) {
+    .footer-contact-link {
+        font-size: 0.9em; /* Smaller font on mobile */
+    }
+    .footer-contact-link i {
+        margin-right: 5px; /* Less space on mobile */
+        font-size: 1em;
+    }
+}
 
 /* Responsive Adjustments */
 @media (min-width: 768px) {
@@ -553,6 +770,7 @@ a:hover {
         justify-content: space-between;
         align-items: center;
         gap: 30px;
+        padding-right: 100px; /* Increase space on the right for absolute icons */
     }
 
     .header-text {
@@ -560,9 +778,25 @@ a:hover {
         padding-right: 30px;
     }
 
-    .header-text h1, .header-text .title {
+    .header-text .title {
          text-align: left;
+         color: var(--secondary-color); /* Ensure title is dark on large screens */
     }
+
+    /* Removed photo positioning from header */
+    /* .header-photo { ... } */
+    /* .header-photo img { ... } */
+
+
+    /* Position header icons */
+    .header-contact-icons {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        margin-top: 0; /* Remove mobile margin */
+        order: 2; /* Place it last in flex order if needed */
+    }
+
 
      .site-nav ul {
          gap: 40px;
@@ -577,16 +811,112 @@ a:hover {
          margin-right: 0;
      }
 
-     /* Adjust project card layout on larger screens */
-     .project-card {
-         flex-direction: row; /* Side-by-side */
-         align-items: stretch; /* Stretch items to fill height */
+     /* Project Card Layout on Larger Screens */
+     .project-item {
+         /* No explicit positioning needed here */
      }
 
-     .project-card img {
-        width: 250px; /* Fixed width */
-        height: auto; /* Height determined by content */
-        max-height: none;
+     /* Content on top of the image, flex column */
+     .project-card-content {
+        /* Position absolute, padding defined globally */
+     }
+
+     /* Position institution and skills using flex layout */
+     .project-institution {
+        /* Default flow within flex column */
+     }
+
+     .project-skills {
+         margin-top: auto; /* Push to the bottom */
+         margin-bottom: 0;
+     }
+
+     /* Removed project button absolute positioning */
+     /* .project-more-button { ... } */
+}
+
+/* Reposition header elements on smaller screens */
+@media (max-width: 767px) {
+    .site-header {
+        padding: 10px 0;
+    }
+    .header-content {
+         padding-right: 20px;
+         padding-bottom: 10px;
+         position: static;
+         flex-direction: column;
+         align-items: center;
+         gap: 10px; /* Space between header elements */
+    }
+    .header-text {
+        flex-grow: 0;
+        margin-bottom: 5px; /* Space below text block */
+    }
+
+    /* Removed photo positioning from header */
+    /* .header-photo { ... } */
+    /* .header-photo img { ... } */
+
+
+    .header-contact-icons {
+        position: static;
+        top: auto;
+        right: auto;
+        margin-top: 0; /* No extra margin needed if gap is handled by parent */
+        justify-content: center;
+        gap: 15px;
+        order: 2; /* Place it last visually */
+    }
+
+    .icon-button {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1em;
+    }
+
+    /* Mobile adjustments for project card content layout */
+    .project-item {
+         /* Removed fixed height, use min-height */
+         /* height: 300px; */
+         min-height: 250px; /* Smaller min-height on mobile */
+    }
+
+    /* Fixed height for visual part on mobile */
+    .project-card-label {
+        height: 250px; /* Matches min-height of item on mobile */
+    }
+
+    .project-card-content {
+        padding: 15px; /* Less padding on mobile */
+        justify-content: space-around; /* Adjust spacing on mobile */
+    }
+     .project-card-content h3 {
+        font-size: 1.4em;
+        margin-bottom: 5px;
+     }
+     .project-institution {
+         font-size: 0.9em;
+         margin-bottom: 5px;
+     }
+     .project-skills {
+         margin-top: 15px; /* Space above skills */
+         margin-bottom: 0;
+         justify-content: center;
+     }
+     .skill-tag {
+         font-size: 0.8em;
+         padding: 3px 8px;
+         border-radius: 3px;
+     }
+
+     /* Removed project button absolute positioning */
+     /* .project-more-button { ... } */
+
+     /* Adjust footer button size */
+     .footer-contact-buttons .icon-button {
+         width: 24px;
+         height: 24px;
+         font-size: 1em;
      }
 }
 
@@ -598,46 +928,26 @@ a:hover {
      p { font-size: 1.05em; }
      body { line-height: 1.8; }
 
-     .intro-section h2 { font-size: 3.5em; }
-     .intro-section p { font-size: 1.4em; }
+     /* Adjusted intro h2 size */
+     .intro-section h2 { font-size: 2.1em; }
+     .intro-section p { font-size: 1.2em; }
+
+     /* Responsive adjustments for profile photo size */
+     .intro-section .profile-picture img {
+        width: 300px; /* Increased size */
+        height: 300px;
+        border-width: 5px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+     }
 }
 
-/* Ensure image and content stack on small screens */
-@media (max-width: 767px) {
-    .project-card {
-        flex-direction: column; /* Stack vertically */
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-        padding: 15px; /* Slightly less padding on small screens */
+/* Extra large screens */
+@media (min-width: 1200px) {
+    /* Further increase profile photo size */
+    .intro-section .profile-picture img {
+        width: 350px;
+        height: 350px;
+        border-width: 6px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
-
-    .project-card img {
-        width: 100%;
-        height: auto;
-        max-height: 200px; /* Limit image height */
-        border-right: none; /* Remove vertical border */
-        border-bottom: 1px solid var(--border-color); /* Add horizontal border */
-        margin-bottom: 15px;
-    }
-
-    .project-card-content {
-        padding: 0; /* Remove padding from inner div */
-        text-align: center;
-    }
-
-     .project-card-content h3 {
-        font-size: 1.2em;
-        text-align: center;
-        margin-bottom: 5px;
-     }
-
-     .project-institution {
-         text-align: center;
-     }
-
-     .project-skills {
-         justify-content: center; /* Center the tags */
-         margin-top: 10px; /* Space above tags */
-     }
 }
