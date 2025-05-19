@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carol Chan - Mechanical Design Engineer Candidate</title>
+    <title>Carol Chan - Portfolio</title>
     <link rel="stylesheet" href="css/style.css"> <!-- Link to CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+     <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -14,19 +16,21 @@
         <div class="container">
             <div class="header-content">
                 <div class="header-text">
-                    <h1>Carol Yan-Yan Chan</h1>
-                    <p class="title">Astrophysics PhD Candidate | Aspiring Mechanical Design Engineer</p>
-                    <div class="header-contact-buttons">
-                        <a href="mailto:ychan19@jhu.edu" class="button">Email</a>
-                        <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
-                    </div>
+                    <h1>Carol Chan</h1>
+                    <p class="title"> Astronomy PhD Candidate | Instrumentalist | Researcher</p>
                 </div>
+                 <!-- Icons moved here -->
+                <div class="header-contact-icons">
+                     <a href="mailto:ychan19@jhu.edu" class="icon-button" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                     <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="icon-button" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                 </div>
             </div>
             <nav class="site-nav">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li> <!-- Active link -->
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="#projects">Projects</a></li> <!-- Link to section on this page -->
+                    <li><a href="files/carol_chan_resume.pdf" target="_blank">Resume</a></li>
+                    <li><a href="publications.html">Publications</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,110 +39,366 @@
     <main>
         <section class="intro-section">
             <div class="container">
-                <h2>Hi! I am Carol!</h2>
-                <p>A driven Astrophysics PhD Candidate with a strong foundation in physics and mechanical design,
-                   transitioning my rigorous problem-solving and hardware development skills to mechanical engineering.</p>
-                <p>Discover my work and background below.</p>
-                <a href="projects.html" class="button">View Projects</a>
-                <a href="resume.html" class="button">View Full Resume</a>
+                <div class="profile-picture">
+                     <img src="images/Profile.jpg" alt="Carol Yan-Yan Chan Profile Photo">
+                </div>
+                <h2>Hi there! I am Carol!</h2>
+                <p> I am a Astronomy PhD Candidate at Johns Hopkins University, working as a researcher in 
+                    the <em>Cosmology Large Angular Scale Surveyor</em> (CLASS) collaboration.
+                    For over 3 years, I've been focused on <strong>designing, characterising and building novel scientific instruments </strong> for precise astronomical observations.
+                    I also analyze the data from these instruments to understand and correct for their systematic effects.
+                </p>
+                <p>Discover my work and experience below!</p>
+
             </div>
         </section>
 
         <section id="projects" class="section container">
-            <h2 class="section-title">Selected Projects</h2>
+            <h2 class="section-title">Projects</h2>
+
+            <p class="projects-instruction">Click into each project below to learn more!</p>
             <div class="projects-gallery">
 
-                <!-- Project 1: CLASS Half-Wave Plate -->
+                <!-- Project 1: Characterization and Deployment of the 90GHz cryogenic receiver -->
                 <div class="project-item">
-                    <a href="projects/hwp.html" class="project-card">
-                        <img src="images/project1_thumb_hwp.jpg" alt="Thumbnail: CLASS 60cm Half-Wave Plate">
-                        <div class="project-card-content">
-                            <h3>CLASS Half-Wave Plate</h3>
-                            <p class="project-institution">CLASS Collaboration / JHU</p>
-                            <div class="project-skills">
-                                <span class="skill-tag">SolidWorks</span>
-                                <span class="skill-tag">Modeling</span>
-                                <span class="skill-tag">Fabrication</span>
-                                <span class="skill-tag">Optical Design</span>
-                            </div>
-                        </div>
-                    </a>
+                   <input type="checkbox" id="project1-toggle" class="project-toggle" hidden>
+                   <label for="project1-toggle" class="project-card-label">
+                       <div class="project-card-visuals" style="background-image: url('images/Cryo_thumbnail.PNG');">
+                            <div class="project-overlay"></div>
+                            <div class="project-card-content">
+                                <p class="project-institution">CLASS Collaboration / JHU</p>
+                                <h3>CLASS Cryogenic Receiver</h3>
+                                <p class="project-short-description">
+                                    Built, characterized and deployed the cryogenic receiver for the CLASS 90GHz telescope
+                                </p>
+                                <div class="project-skills">
+                                  <span class="skill-tag">CAD Design</span>
+                                  <span class="skill-tag">Design for Manufacturing</span>
+                                  <span class="skill-tag">Fabrication</span>
+                                  <span class="skill-tag">Cryogenics</span>
+                                  <span class="skill-tag">Dimensional Metrology</span>
+                               </div>
+                           </div>
+                       </div>
+                   </label>
+                   <!-- This div contains the hidden/shown details -->
+                    <div class="project-details">
+                        <p>The cryogenic receiver is a critical component in the CLASS telescope where it cools down superconducting detectors down to ~100mK
+                           for high sensitivity measurements of the Cosmic Microwave Background (CMB) radiation. 
+                           I built and characterised the cryogenic receiver for the CLASS 90GHz telescope, and led team efforts to deploy the telescope in June 2025.</p>
+                        <p><strong>Key Responsibilities & Tasks:</strong></p>
+                        <ul>
+                            <li>Coordinated and led efforts for the deployment, assembly, and successful commissioning
+                                of the CLASS 90GHz telescope in the Atacama Desert in Chile</li>
+                            <li>Collaborated with external manufacturers to facilitate the production of components for the cryogenic receiver</li>
+                            <li>Performed multiple cooling and warming cycles of the cryogenic system to ensure reliable functionality.
+                            <li>Conducted position measurements using a portable Coordinate Measuring Machine 
+                                (FaroArm) to validate optical component alignment </li>
+                        </ul>
+                        <!--
+                        <div class="project-details-visuals">
+                            <img src="images/class_system.jpg" alt="CLASS instrument component photo">
+                            <p class="image-caption">Example of a component from the CLASS instrument system.</p>
+                        </div>-->
+                        
+                        <label for="project1-toggle" class="button close-button">Close Details</label>
+                    </div>
                 </div>
 
-                <!-- Project 2: Quadruped Robot -->
-                 <div class="project-item">
-                    <a href="projects/robot.html" class="project-card">
-                        <img src="images/project2_thumb_robot.jpg" alt="Thumbnail: Quadruped Robot">
-                        <div class="project-card-content">
-                            <h3>Quadruped Robot Design</h3>
-                            <p class="project-institution">HKUST Robotics Team</p>
-                             <div class="project-skills">
-                                <span class="skill-tag">SolidWorks</span>
-                                <span class="skill-tag">Assembly Design</span>
-                                <span class="skill-tag">Prototyping</span>
-                                <span class="skill-tag">Fabrication</span>
-                                <span class="skill-tag">Collaboration</span>
+                <!-- Project 2: Reflective Half-Wave Plate -->
+                <div class="project-item">
+                    <input type="checkbox" id="project2-toggle" class="project-toggle" hidden>
+                    <label for="project2-toggle" class="project-card-label">
+                        <!-- This div contains the visual card (background, overlay, text) -->
+                        <div class="project-card-visuals" style="background-image: url('images/HWP_thumbnail.PNG');">
+                            <div class="project-overlay"></div>
+                            <div class="project-card-content">
+                                <p class="project-institution">CLASS Collaboration / JHU</p>
+                                <h3>Reflective Half-Wave Plate</h3>
+                                <p class="project-short-description">
+                                    Designed and built a novel polarization modulator, the reflective half-wave plate, for the CLASS 90GHz telescope
+                                </p>
+                                <div class="project-skills">
+                                    <span class="skill-tag">CAD design</span>
+                                    <span class="skill-tag">Design for Manufacturing</span>
+                                    <span class="skill-tag">Fabrication</span>
+                                    <span class="skill-tag">Finite Element Analysis</span>
+                                    <span class="skill-tag">Structural Analysis</span>
+                                    <span class="skill-tag">Dimensional Metrology</span>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    </label>
+                    <!-- This div contains the hidden/shown details -->
+                    <div class="project-details">
+                         <p>The reflective half-wave plate (HWP) is a polarization modulator designed for the CLASS telescope that modulates incoming polarization signal, 
+                            thus separating the faint polarization of the Cosmic Microwave Background from the much stronger instrumental noise.
+                            The HWP consists of a wire grid and a reflective surface, which is rotated to modulate the polarization signal.
+                            I took part in the design, characterization, and deployment of the reflective HWP.
+                        </p>
+                         <p><strong>Key Responsibilities & Tasks:</strong></p>
+                         <ul>
+                             <li>Designed and modeled the mounting structure of HWP using SolidWorks</li>
+                             <li>Designed a stretcher frame for tensioning the wire grid of the HWP</li>
+                             <li>Performed Structral analysis of the HWP mounting structure and the strecther frame using SolidWorks FEA simulations </li>
+                             <li>Collaborated with external manufacturers to facilitate the production of components for the HWP</li>
+                             <li>Characterised the specification compliance of the HWP</li>
+                         </ul>
+                         <div class="project-details-visuals">
+                             <img src="images/RHWP_CAD.png" alt="The HWP model">
+                             <p class="image-caption">The model of the HWP</p>
+                             <img src="images/stretcher_frame.PNG" alt="The stretcher frame model">
+                             <p class="image-caption">The model of the stretcher frame, which is used to tension the HWP wire grid</p>
+                             <img src="images/stretcher_frame_sim.PNG" alt="The stretcher frame Simulation">
+                             <p class="image-caption">FEA simulation results for the deformation of the stretcher frame. </p>
+                             <!-- Add more images/videos here -->
+                         </div>
+                         
+                         <!-- Add link to publication if relevant -->
+                            <p>See relevant publication: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13102/131021T/Design-and-characterization-of-a-60-cm-reflective-half-wave/10.1117/12.3016346.short" 
+                                target="_blank">Design and characterization of a 60-cm reflective half-wave plate for the CLASS 90 GHz band telescope (Shi, R., et al. 2024)</a></p>
+
+                         <!-- Add a close button/label -->
+                         <label for="project2-toggle" class="button close-button">Close Details</label>
+                    </div>
                 </div>
 
-                 <!-- Project 3: CLASS Instrument Development -->
+                <!-- Project 3: Infra-red Blocking Aerogel Filters -->
                 <div class="project-item">
-                    <a href="projects/class-instrument.html" class="project-card">
-                         <img src="images/project3_thumb_class.jpg" alt="Thumbnail: CLASS Instrument">
-                         <div class="project-card-content">
-                             <h3>CLASS Instrument Dev.</h3>
-                             <p class="project-institution">CLASS Collaboration / JHU</p>
-                              <div class="project-skills">
-                                <span class="skill-tag">FEA</span>
-                                <span class="skill-tag">COMSOL</span>
-                                <span class="skill-tag">Thermal Analysis</span>
-                                <span class="skill-tag">Structural Analysis</span>
-                                <span class="skill-tag">LabView</span>
-                                <span class="skill-tag">Arduino</span>
-                            </div>
-                         </div>
-                     </a>
-                 </div>
+                   <input type="checkbox" id="project3-toggle" class="project-toggle" hidden>
+                   <label for="project3-toggle" class="project-card-label">
+                       <div class="project-card-visuals" style="background-image: url('images/Aerogel_thumbnail.PNG');">
+                            <div class="project-overlay"></div>
+                            <div class="project-card-content">
+                                <p class="project-institution">NASA Goddard Space Flight Center & JHU</p>
+                                <h3>Infra-red Blocking Aerogel Filters</h3>
+                                    <p class="project-short-description">
+                                    Performed cryogenic testing and thermal analysis of NASA-deveoloped Aerogel filters
+                                    </p>
+                                <div class="project-skills">
+                                  <span class="skill-tag">Finite Element Analysis</span>
+                                  <span class="skill-tag">COMSOL Multiphysics</span>
+                                  <span class="skill-tag">Thermal Analysis</span>
+                                  <span class="skill-tag">Cryogenics</span>
+                                  <span class="skill-tag">Design for Manufacturing</span>
+                               </div>
+                           </div>
+                       </div>
+                   </label>
+                   <!-- This div contains the hidden/shown details -->
+                    <div class="project-details">
+                        <p> </p>
+                        <p><strong>Key Responsibilities & Tasks:</strong></p>
+                        <ul>
+                            <li>Designed and modeled various optical components and scientific instruments using SolidWorks.</li>
+                            <li>Performed structural analysis (static, frequency) using SolidWorks Simulation to ensure integrity under operational loads.</li>
+                            <li>Developed and validated Finite Element Simulations (FEA) using COMSOL Multiphysics for radiation and heat transfer in cryogenic systems, predicting thermal performance and optimizing insulation.</li>
+                            <li>Developed automated scientific data acquisition and instrument control systems using LabView and Arduino.</li>
+                            <li>Coordinated technical efforts (7 students/scientists) for the deployment, assembly, and commissioning of a large scientific instrument in a remote environment (Atacama Desert in Chile).</li>
+                            <li>Applied analytical techniques to evaluate instrument performance and identify systematic effects from observational data.</li>
+                        </ul>
+                        <div class="project-details-visuals">
+                            <h5>Visuals</h5>
+                            <img src="images/class_system.jpg" alt="CLASS instrument component photo">
+                            <p class="image-caption">Example of a component from the CLASS instrument system.</p>
+                            <img src="images/class_simulation.jpg" alt="COMSOL thermal simulation result">
+                            <p class="image-caption">Result from COMSOL thermal simulation for a cryogenic component.</p>
+                            <!-- Add more images/videos here -->
+                        </div>
+                        <p><strong>Outcome:</strong> Contributed to the successful design, simulation, deployment, and commissioning of the CLASS instruments, enabling cutting-edge cosmological observations.</p>
 
-                <!-- Project 4: Thermoacoustic Instability Analysis -->
+                        <label for="project3-toggle" class="button close-button">Close Details</label>
+                    </div>
+                </div>
+
+                <!-- Project 4: Quadruped Robot -->
                  <div class="project-item">
-                    <a href="projects/thermoacoustic.html" class="project-card">
-                        <img src="images/project4_thumb_thermo.jpg" alt="Thumbnail: Thermoacoustic Analysis">
-                         <div class="project-card-content">
-                            <h3>Thermoacoustic Analysis</h3>
-                            <p class="project-institution">HKUST MAE Dept.</p>
-                             <div class="project-skills">
-                                <span class="skill-tag">MATLAB</span>
-                                <span class="skill-tag">Data Analysis</span>
-                                <span class="skill-tag">Statistical Modelling</span>
-                                <span class="skill-tag">Root Cause Analysis</span>
-                            </div>
+                    <input type="checkbox" id="project4-toggle" class="project-toggle" hidden>
+                    <label for="project4-toggle" class="project-card-label">
+                        <div class="project-card-visuals" style="background-image: url('images/Robocon_thumbnail.PNG');">
+                             <div class="project-overlay"></div>
+                             <div class="project-card-content">
+                                 <p class="project-institution">Robotics Team | HKUST</p>
+                                 <h3>Quadruped Robot</h3>
+                                 <p class="project-short-description">
+                                    Designed and built a quadruped robot for the Hong Kong Robocon competition
+                                </p>
+                                  <div class="project-skills">
+                                    <span class="skill-tag">CAD Design</span>
+                                    <span class="skill-tag">Design for Manufacturing</span>
+                                    <span class="skill-tag">Prototyping</span>
+                                    <span class="skill-tag">Fabrication</span>
+                                    <span class="skill-tag">3D Printing</span>
+                                </div>
+                             </div>
+                        </div>
+                    </label>
+                    <!-- This div contains the hidden/shown details -->
+                     <div class="project-details">
+                         <p><strong></p>
+                         <p><strong>Key Responsibilities & Tasks:</strong></p>
+                         <ul>
+                             <li>Designed and built a four-bar linkage quadruped robot</li>
+                             <li>Fabricated custom parts, including 3D printing and manual machining.</li>
+                             <li>Collaborated closely with a team of 20+ students across electronics and software divisions to integrate mechanical, electrical, and control systems.</li>
+                         </ul>
+                         <div class="project-details-visuals">
+                             <h5>Visuals</h5>
+                             <img src="images/robot_photo.jpg" alt="Photo of the quadruped robot">
+                             <p class="image-caption">The finished quadruped robot built for the Robocon competition.</p>
+                             <div class="video-container">
+                                <video controls muted>
+                                    <source src="videos/robot.mp4" type="video/mp4">
+                                 Your browser does not support the video tag.
+                                </video>
+                             </div>
+                             <p class="video-caption">Demonstration of robot finishing the competition path.</p>
                          </div>
-                     </a>
+                         <p><strong>Outcome:</strong> The robot design contributed to winning the Hong Kong Robocon Best Design Award and achieving Second-runner up in 2019.</p>
+
+                         <label for="project4-toggle" class="button close-button">Close Details</label>
+                     </div>
                  </div>
 
-                <!-- Add more projects as needed, linking to their specific HTML pages -->
+            
+
+                <!-- Project 5: Instant Photo Printer -->
+                 <div class="project-item">
+                    <input type="checkbox" id="project5-toggle" class="project-toggle" hidden>
+                    <label for="project5-toggle" class="project-card-label">
+                        <div class="project-card-visuals" style="background-image: url('images/ELEC3300_thumbnail.png');">
+                             <div class="project-overlay"></div>
+                             <div class="project-card-content">
+                                 <p class="project-institution">ELEC3300 Course Project | HKUST</p>
+                                 <h3>Instant Photo Printer</h3>
+                                 <div class="project-skills">
+                                   <span class="skill-tag">STM32 Programming</span>
+                                   <span class="skill-tag">Embedded System</span>
+                                   <span class="skill-tag">C (Programming Language)</span>
+                                   <span class="skill-tag">System Integration</span>
+                                </div>
+                             </div>
+                        </div>
+                    </label>
+                    <!-- This div contains the hidden/shown details -->
+                     <div class="project-details">
+                         <p>I designed and programmed an instant photo printer that prints B&W photos from photos taken by a camera using a STM32 microcontroller. </p>
+                         <p><strong>Key Responsibilities & Tasks:</strong></p>
+                         <ul>
+                            <p> Programmed STM32 using C to <p>
+                                <ul>
+                                    <li> store BMP images taken by the camera into an SD card</li>
+                                    <li> convert 24-bit colored image from the camera to a binary B/W value </li>
+                                    <li> send the binary data to the thermal printer via UART
+                                </ul>
+                             
+                         </ul>
+                         <div class="project-details-visuals">
+                            <h5>Demonstration video</h5>
+                            <!-- Add relevant visuals if you have them, e.g., plots, diagrams -->
+                             <div class="video-container"> <!-- Use the responsive container -->
+                                <video controls>
+                                    <source src="videos/Instant photo printer.mp4" type="video/mp4">
+                                 <!-- You can add other source types for broader browser support -->
+                                 <!-- <source src="images/your_project_video.webm" type="video/webm"> -->
+                                 Your browser does not support the video tag.
+                                </video>
+                            </div>
+                          <!-- End video tag block -->
+
+                          <!-- More images/videos if needed -->
+                        </div>
+                         <label for="project5-toggle" class="button close-button">Close Details</label>
+                     </div>
+                 </div>
+
+                <!-- Project 6: Cooling System for a Photon Detector -->
+                 <div class="project-item">
+                    <input type="checkbox" id="project6-toggle" class="project-toggle" hidden>
+                    <label for="project6-toggle" class="project-card-label">
+                        <div class="project-card-visuals" style="background-image: url('images/Photon_detector_thumbnail.PNG');">
+                             <div class="project-overlay"></div>
+                             <div class="project-card-content">
+                                 <p class="project-institution">Research Project | HKUST</p>
+                                 <h3>Cooling System for a Photon Detector</h3>
+                                 <div class="project-skills">
+                                   <span class="skill-tag">LabVIEW</span>
+                                   <span class="skill-tag">CAD design</span>
+                                   <span class="skill-tag">3D Printing</span>
+                                   <span class="skill-tag">Arduino</span>
+                                </div>
+                             </div>
+                        </div>
+                    </label>
+                    <!-- This div contains the hidden/shown details -->
+                     <div class="project-details">
+                         <p> I designed a cooling system for a astronomical single-photon detector to minimise thermal noise.  </p>
+                         <p><strong>Key Responsibilities & Tasks:</strong></p>
+                         <ul>
+                            <li> Intergrated a CPU cooler, thermoelectric cooler and 3D print enclousure to achieve active cooling of the detector</li>
+                            <li> Implemented temperature tracking and logging using Arduino </li>
+                            <li> Programmed LabVIEW for visualization of detector signals </li>
+                             
+                         </ul>
+                         <div class="project-details-visuals">
+                            <img src="images/cooling system.jpg" alt="Photo of the cooling system">
+                            <p class="image-caption">Set up of the cooling system</p>
+        
+                          <!-- End video tag block -->
+
+                          <!-- More images/videos if needed -->
+                        </div>
+                         <label for="project6-toggle" class="button close-button">Close Details</label>
+                     </div>
+                 </div>
 
             </div>
         </section>
-    
+
 
     </main>
 
     <footer class="site-footer">
-        <div class="container" id="contact">
-            <p>© <span id="current-year"></span> Carol Yan-Yan Chan. All rights reserved.</p>
-            <div class="footer-contact-buttons">
-                 <a href="mailto:ychan19@jhu.edu" class="button">Email</a>
-                 <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
+         <div class="container" id="contact">
+             <p>© <span id="current-year"></span> Carol Yan-Yan Chan. All rights reserved.</p>
+             <!-- Replace the footer-contact-buttons div with the block below -->
+             <div class="footer-contact-info">
+                 <p>
+                     <a href="mailto:ychan19@jhu.edu" class="footer-contact-link">
+                         <i class="fas fa-envelope"></i> ychan19@jhu.edu
+                     </a>
+                 </p>
+                 <p>
+                     <a href="https://www.linkedin.com/in/carolyanyanchan/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                         <i class="fab fa-linkedin"></i> linkedin.com/in/carolyanyanchan
+                     </a>
+                 </p>
+             </div>
+             <!-- End of new block -->
+         </div>
+     </footer>
 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Simple script to close other project details when one is opened
+        document.querySelectorAll('.project-toggle').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                if (this.checked) {
+                    // Optional: Scroll to the top of the opened project item when opened
+                    setTimeout(() => {
+                         this.closest('.project-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                     }, 500); // Delay matches transition time
+
+                    document.querySelectorAll('.project-toggle').forEach(otherToggle => {
+                        if (otherToggle !== this) {
+                            otherToggle.checked = false;
+                        }
+                    });
+                }
+                 // Optional: Could add scroll logic when closing, but often unnecessary
+            });
+        });
     </script>
 
 </body>
