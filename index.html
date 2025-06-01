@@ -87,18 +87,21 @@
                            for high sensitivity measurements of the Cosmic Microwave Background (CMB) radiation. 
                            I built and characterized the cryogenic receiver for the CLASS second 90GHz (W2) telescope, and led team efforts to deploy the telescope in June 2025.</p>
                         <p><strong>Key Responsibilities & Tasks:</strong></p>
-                        <ul>
-                            <li>Coordinated and led efforts for the deployment, assembly, and successful commissioning
-                                of the CLASS 90GHz telescope in the Atacama Desert in Chile</li>
-                            <li>Collaborated with external manufacturers to facilitate the production of components for the cryogenic receiver</li>
-                            <li>Performed multiple cooling and warming cycles of the cryogenic system to ensure reliable functionality
-                            <li>Conducted position measurements using a portable Coordinate Measuring Machine 
+                        <ul><li>Managed the production lifecycle of custom parts (CNC, laser cut) for the CLASS cryogenic receiver by liaising directly with
+                                international manufacturers, reducing production cost by over 30%</li>
+                            <li>Conducted metrology measurements using a portable Coordinate Measuring Machine (CMM) 
                                 (FaroArm) to validate optical component alignment </li>
+                            <li>Coordinated and led efforts for the deployment, assembly, and successful commissioning
+                                of the CLASS 90GHz telescope in the in the highly challenging Atacama Desert environment in Chile</li>
+                            <li>Managed operation and troubleshooting of an ultra-low temperature (below 100mK) dilution-refrigerator-based
+                                cryogenic receiver of the CLASS telescope, maintaining temperature stability within 5mK essential for
+                                highly-sensitive astronomical detectors</li>
+                            <li>Fabricated custom parts using manual machining (milling and drilling), achieving over 50% cost saving</li>
                         </ul>
                         
                         <div class="project-details-visuals">
-                            <img src="images/receiver_in_crate.PNG" alt="CLASS receiver in crate">
-                            <p class="image-caption"> Crated the CLASS W2 Receiver to be shipped to Chile!</p>
+                            <img src="images/Cryo_thumbnail.PNG" alt="CLASS receiver">
+                            <p class="image-caption"> A rendered model of the cross section of the CLASS cryogenic receiver. Sky signal coming from the left, passing through a series of filters and lenses, eventually arriving the focal plane with the detectors are located</p>
                         </div>
                         
                         <label for="project1-toggle" class="button close-button">Close</label>
@@ -138,12 +141,19 @@
                         </p>
                          <p><strong>Key Responsibilities & Tasks:</strong></p>
                          <ul>
-                             <li>Designed and modeled the mounting structure of HWP using SolidWorks</li>
-                             <li>Designed a stretcher frame for tensioning the wire grid of the HWP</li>
-                             <li>Performed structral analysis of the HWP mounting structure and the stretcher frame using SolidWorks FEA simulations </li>
-                             <li>Collaborated with external manufacturers to facilitate the production of components for the HWP</li>
-                             <li>Characterized the specifications compliance of the HWP using FaroArm and Confocal distance sensor</li>
-                         </ul>
+                             <li>Designed and modeled with SolidWorks
+                                <ul>
+                                    <li>(1) a mounting structure to hold the HWP inside the CLASS telecope </li>
+                                    <li>(2) a stretcher frame for tensioning and mounting the wire grid of the HWP</li>
+                                </ul>
+                            <li>Performed structral analysis of the HWP mounting structure and the stretcher frame using SolidWorks finite element analysis (FEA) simulations
+                                 to keep the deformation of the stretcher bar to be less than 2% of the designed tensison profile  </li>
+                             <li>Managed the production lifecycle of custom parts (CNC, weldment) for the HWP by liaising directly with
+                                international manufacturers, reducing production cost by over 30%</li>
+                             <li>Coducted metrology measurement of the HWP using portable coordinate measuring machine (CMM) (FaroArm), confocal distance sensor and microscope
+                                to minimize mirror tilt with respect to the rotation axis and ensure the uniformity of wire-mirror separation</li>
+                            <li>Fabricated custom parts using 3D printing and manual machining (milling and drilling), achieving over 50% cost saving</li>
+                            </ul>
                          <div class="project-details-visuals">
                              <img src="images/RHWP_CAD.png" alt="The HWP model">
                              <p class="image-caption">3D model of the HWP</p>
@@ -195,13 +205,16 @@
                             and validated its performance with thermal finite element analysis using COMSOL Multiphysics. </p>
                         <p><strong>Key Responsibilities & Tasks:</strong></p>
                         <ul>
-                            <li>Designed parts for mounting the aerogel filters into the CLASS cryogenic receiver</li>
-                            <li>Performed thermal analysis using COMSOL Multphysics to optimize the configuration of filter and validate thermal performance of the filters</li>
+                            <li>Designed plastic mounting ring for holding the aerogel filters in the CLASS cryogenic receiver</li>
+                            <li>Integrated the aerogel filters and temperature readout electronics into the CLASS cryogenic receiver </li>
+                            <li>Performed thermal finite element analysis (FEA) using COMSOL Multphysics to optimize the configuration of filter and validate thermal performance of the filters</li>
                             <li>Presented the results in the poster session of the 2024 AAS meeting</li>
                         </ul>
                         <div class="project-details-visuals">
+                            <img src="images/aerogel.PNG" alt="Aerogel filter mounte in the CLASS receiver">
+                            <p class="image-caption">Aerogel filter (yellow) mounted in the CLASS cryogenic receiver</p>
                             <img src="images/comsol_simulation.png" alt="COMSOL thermal simulation result">
-                            <p class="image-caption">Result from COMSOL thermal simulation of the Aerogel filters inside the cryogenic receiver</p>
+                            <p class="image-caption">Result from COMSOL thermal simulation of a stack of 5 foam filters and 5 aerogel filters inside the cryogenic receiver</p>
                             <img src="images/AAS.png" alt="AAS poster presentation">
                             <p class="image-caption">Me presenting my work in AAS 2024 winter meeting :) </p>
                         </div>
@@ -237,23 +250,24 @@
                     <!-- This div contains the hidden/shown details -->
                      <div class="project-details">
                          <p> Active cooling is essential for photon detectors to minimize thermal noise.
-                            I designed a cooling system for a Silicon Photomultiplier-based astronomical single-photon detector to cool it down to -51 °C.  </p>
+                            I designed a cooling system, for a Silicon Photomultiplier-based astronomical
+                            single-photon detector to cool it down to -51 °C.  
+                            The cooling system consists of a thermoelectric cooler, which actively extracts heat from the detector attached to it
+                            , a CPU cooler, which carries heat away from the hot side of the thermoelectric cooloer
+                            , and a 3D-printed enclosure, which reduces heat transfer by convection by creating a air-tight chamber around the detector.
+                            </p>
                          <p><strong>Key Responsibilities & Tasks:</strong></p>
                          <ul>
                             <li> Integrated a CPU cooler, thermoelectric cooler and 3D-printed enclosure to achieve active cooling of the detector</li>
                             <li> Implemented temperature tracking and logging using Arduino </li>
-                            <li> Programmed LabVIEW for visualization of detector signals </li>
+                            <li> Designed an interface for detector readout visualization using LabVIEW </li>
                              
                          </ul>
                          <div class="project-details-visuals">
-                            <img src="images/enclosure.PNG" alt="Photo of the 3D printed enclosure">
-                            <p class="image-caption">3D model of the cooling system enclosure</p>
                             <img src="images/cooling system.jpg" alt="Photo of the cooling system">
-                            <p class="image-caption">Set up of the cooling system</p>
-        
-                          <!-- End video tag block -->
-
-                          <!-- More images/videos if needed -->
+                            <p class="image-caption">Set up of the cooling system, which includes a CPU cooler, a thermoelectric cooler, and a 3D-printed enclosure </p>
+                            <img src="images/enclosure.PNG" alt="Photo of the 3D printed enclosure">
+                            <p class="image-caption">CAD model of the cooling system enclosure, which is used to optimize detector cooling by reducing heat transfer by convection</p>
                         </div>
                          <label for="project6-toggle" class="button close-button">Close</label>
                      </div>
@@ -289,7 +303,8 @@
                                 <ul>
                                     <li> Stored BMP images taken by the camera into an SD card</li>
                                     <li> Converted 24-bit colored image from the camera to a binary B/W value </li>
-                                    <li> Transmitted the binary data to the thermal printer via UART
+                                    <li> Designed an algorithm to adjust the contrast of the image based on the user input value </li>
+                                    <li> Transmitted the binary data to the thermal printer for printing via UART </li>
                                 </ul>
                              
                          </ul>
