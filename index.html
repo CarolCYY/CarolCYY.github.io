@@ -172,7 +172,6 @@
                              <!-- Add more images/videos here -->
                          </div>
                          
-                         <!-- Add link to publication if relevant -->
                             <p>See relevant publication: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13102/131021T/Design-and-characterization-of-a-60-cm-reflective-half-wave/10.1117/12.3016346.short" 
                                 target="_blank">Design and characterization of a 60-cm reflective half-wave plate for the CLASS 90 GHz band telescope (Shi, R., et al. 2024)</a></p>
 
@@ -315,7 +314,6 @@
                              
                          </ul>
                          <div class="project-details-visuals">
-                            <!-- Add relevant visuals if you have them, e.g., plots, diagrams -->
                              <div class="video-container"> <!-- Use the responsive container -->
                                 <video controls>
                                     <source src="videos/Instant photo printer compressed.mp4" type="video/mp4">
@@ -327,7 +325,6 @@
                             <p class="video-caption">Demo of the instant photo printer</p>
                           <!-- End video tag block -->
 
-                          <!-- More images/videos if needed -->
                         </div>
                          <label for="project5-toggle" class="button close-button">Close</label>
                      </div>
@@ -394,7 +391,6 @@
     <footer class="site-footer">
          <div class="container" id="contact">
              <p>© <span id="current-year"></span> Carol Yan-Yan Chan. All rights reserved.</p>
-             <!-- Replace the footer-contact-buttons div with the block below -->
              <div class="footer-contact-info">
                  <p>
                      <a href="mailto:ychan19@jhu.edu" class="footer-contact-link">
@@ -407,7 +403,6 @@
                      </a>
                  </p>
              </div>
-             <!-- End of new block -->
          </div>
      </footer>
 
@@ -418,10 +413,9 @@
         document.querySelectorAll('.project-toggle').forEach(toggle => {
             toggle.addEventListener('change', function() {
                 if (this.checked) {
-                    // Optional: Scroll to the top of the opened project item when opened
                     setTimeout(() => {
                          this.closest('.project-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                     }, 500); // Delay matches transition time
+                     }, 500);
 
                     document.querySelectorAll('.project-toggle').forEach(otherToggle => {
                         if (otherToggle !== this) {
@@ -429,7 +423,6 @@
                         }
                     });
                 }
-                 // Optional: Could add scroll logic when closing, but often unnecessary
             });
         });
     </script>
